@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace _10._Top_Number
 {
@@ -6,27 +7,55 @@ namespace _10._Top_Number
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
+            int number = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(TopNumbers(n));
+            PrintTopNumbers(number);
         }
 
-        static int TopNumbers(int number)
+        static void PrintTopNumbers(int number)
         {
-            int sum = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                if (IsDivisibleBy8(i) && HasOddDigit(i))
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
 
+        static bool HasOddDigit(int number)
+        {
             while (number != 0)
             {
-                sum += number % 10;
+                if ((number % 10) % 2 == 1)
+                {
+                    return true;
+                }
+                number /= 10;
+            }
+            return false;
+        }
+
+        static bool IsDivisibleBy8(int number)
+        {
+            int sum = 0;
+            
+            while (number != 0) 
+            {
+                int nextNum = number % 10;
+
+                sum += nextNum;
+
+                nextNum -= number;
                 number /= 10;
             }
 
             if (sum % 8 == 0)
             {
-                return sum;
+                return true;
             }
 
-            return sum;
+            return false;
         }
     }
 }
