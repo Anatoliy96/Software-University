@@ -5,15 +5,17 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Sum Adjacent Equal Numbers", "01. Sum Adjacent Equal Numbers\01. Sum Adjacent Equal Numbers.csproj", "{510FCBF2-6665-4928-B657-390B88919657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Gauss' Trick", "02. Gauss' Trick\02. Gauss' Trick.csproj", "{CFBF1FB1-37CD-4558-833F-BEBF157DC6FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Gauss' Trick", "02. Gauss' Trick\02. Gauss' Trick.csproj", "{CFBF1FB1-37CD-4558-833F-BEBF157DC6FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Merging Lists", "03. Merging Lists\03. Merging Lists.csproj", "{8564DC06-853B-4167-BC34-B297884E0AF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Merging Lists", "03. Merging Lists\03. Merging Lists.csproj", "{8564DC06-853B-4167-BC34-B297884E0AF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. List of Products", "04. List of Products\04. List of Products.csproj", "{C7AFA9EA-44EE-40A2-896D-9EB2607434E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. List of Products", "04. List of Products\04. List of Products.csproj", "{C7AFA9EA-44EE-40A2-896D-9EB2607434E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Remove Negatives and Reverse", "05. Remove Negatives and Reverse\05. Remove Negatives and Reverse.csproj", "{0EA4BAF5-798A-4427-944A-BBEF50FD2931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Remove Negatives and Reverse", "05. Remove Negatives and Reverse\05. Remove Negatives and Reverse.csproj", "{0EA4BAF5-798A-4427-944A-BBEF50FD2931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. List Manipulation Basics", "06. List Manipulation Basics\06. List Manipulation Basics.csproj", "{88F74BB8-276C-4A6B-A57B-4C0E78A7E57F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. List Manipulation Basics", "06. List Manipulation Basics\06. List Manipulation Basics.csproj", "{88F74BB8-276C-4A6B-A57B-4C0E78A7E57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. List Manipulation Advanced", "07. List Manipulation Advanced\07. List Manipulation Advanced.csproj", "{EFDA7D24-0C2B-4BCF-B9B9-3CF0BE0229AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{88F74BB8-276C-4A6B-A57B-4C0E78A7E57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F74BB8-276C-4A6B-A57B-4C0E78A7E57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F74BB8-276C-4A6B-A57B-4C0E78A7E57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFDA7D24-0C2B-4BCF-B9B9-3CF0BE0229AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFDA7D24-0C2B-4BCF-B9B9-3CF0BE0229AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFDA7D24-0C2B-4BCF-B9B9-3CF0BE0229AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFDA7D24-0C2B-4BCF-B9B9-3CF0BE0229AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
