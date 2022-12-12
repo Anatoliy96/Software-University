@@ -51,7 +51,7 @@ namespace _04._List_Operations
                         continue;
                     }
                     
-                    numbers.Remove(index);
+                    numbers.RemoveAt(index);
                 }
 
                 else if (action == "Shift")
@@ -66,7 +66,7 @@ namespace _04._List_Operations
                             numbers.RemoveAt(0);
                         }
                     }
-                    else if (tokens[0] == "right")
+                    else if (tokens[1] == "right")
                     {
                         for (int i = 0; i < count; i++)
                         {
