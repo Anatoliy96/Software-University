@@ -12,8 +12,6 @@ namespace _06._Store_Boxes
 
             string command;
 
-            double sum = 0;
-
             while ((command = Console.ReadLine()) != "end")
             {
                 string[] tokens = command.Split();
