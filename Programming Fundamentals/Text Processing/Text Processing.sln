@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Text Filter", "04. Text
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Digits, Letters and Other", "05. Digits, Letters and Other\05. Digits, Letters and Other.csproj", "{5CB8170B-32BE-46E6-9AB9-156A77A71F08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. The Imitation Game", "01. The Imitation Game\01. The Imitation Game.csproj", "{B9FB7727-C4EB-42ED-8D19-D0E86E3ED7B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5CB8170B-32BE-46E6-9AB9-156A77A71F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CB8170B-32BE-46E6-9AB9-156A77A71F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CB8170B-32BE-46E6-9AB9-156A77A71F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FB7727-C4EB-42ED-8D19-D0E86E3ED7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FB7727-C4EB-42ED-8D19-D0E86E3ED7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FB7727-C4EB-42ED-8D19-D0E86E3ED7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FB7727-C4EB-42ED-8D19-D0E86E3ED7B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
