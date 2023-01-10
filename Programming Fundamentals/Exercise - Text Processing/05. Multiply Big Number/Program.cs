@@ -27,7 +27,7 @@ namespace _05._Multiply_Big_Number
 
                 int result = lastNum * number + remainder;
 
-                sb.Append(lastChar % 10);
+                sb.Append(result % 10);
 
                 remainder = result / 10;
             }
