@@ -13,19 +13,13 @@ namespace _12._Refactor_Special_Numbers
             bool isSpecialNum = false;
 
             for (int i = 1; i <= number; i++)
-
             {
-
                 int currentNumber = i;
-
                 while (i > 0)
-
                 {
-
                     sum += i % 10;
 
                     i = i / 10;
-
                 }
 
                 isSpecialNum = (sum == 5) || (sum == 7) || (sum == 11);
