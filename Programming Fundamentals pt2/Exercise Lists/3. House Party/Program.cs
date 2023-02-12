@@ -26,7 +26,7 @@ namespace _3._House_Party
                     }
                     else
                     {
-                        Console.WriteLine($"{name} is already in the list!");
+                        Console.WriteLine($"{tokens[0]} is already in the list!");
                     }
                 }
                 else if (tokens[1] == "is" && tokens[2] == "not" && tokens[3] == "going!")
