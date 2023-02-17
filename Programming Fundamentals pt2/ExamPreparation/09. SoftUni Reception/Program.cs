@@ -12,26 +12,22 @@ namespace _09._SoftUni_Reception
 
             int countOfStundets = int.Parse(Console.ReadLine());
 
-            int hourCount = 1;
+            int hourCount = 0;
 
             int employeesEfficiency = emp1 + emp2 + emp3;
 
             while (countOfStundets > 0)
             {
+                hourCount++;
+
                 if (hourCount % 4 == 0)
                 {
-                    hourCount++;
-                    continue;
+                    
                 }
-
-                countOfStundets -= employeesEfficiency;
-
-                if (countOfStundets <= 0)
+                else
                 {
-                    break;
+                    countOfStundets -= employeesEfficiency;
                 }
-
-                hourCount++;
             }
 
             Console.WriteLine($"Time needed: {hourCount}h.");
