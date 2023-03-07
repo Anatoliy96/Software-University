@@ -63,8 +63,17 @@ namespace _06._Vehicle_Catalogue
             List<Vehicle> cars = vehicles.Where(v => v.Type == "car").ToList();
             List<Vehicle> trucks = vehicles.Where(v => v.Type == "truck").ToList();
 
-            double carsAverageHoursePower = (double)carsHoursePower / cars.Count;
-            double trucksAverageHoursePower = (double)trucksHoursePower / trucks.Count;
+            double carsAverageHoursePower = 0;
+            double trucksAverageHoursePower = 0;
+            if (cars.Count > 0 )
+            {
+                carsAverageHoursePower = (double)carsHoursePower / cars.Count;
+            }
+
+            if (trucks.Count > 0)
+            {
+                trucksAverageHoursePower = (double)trucksHoursePower / trucks.Count;
+            }
 
             Console.WriteLine($"Cars have average horsepower of: {carsAverageHoursePower:f2}.");
             Console.WriteLine($"Trucks have average horsepower of: {trucksAverageHoursePower:f2}.");
