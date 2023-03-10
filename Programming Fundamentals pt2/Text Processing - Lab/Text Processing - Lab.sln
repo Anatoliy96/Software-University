@@ -5,7 +5,13 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Reverse Strings", "01. Reverse Strings\01. Reverse Strings.csproj", "{18F6CF7B-E8FE-4B54-B796-5073D04A0955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Repeat Strings", "02. Repeat Strings\02. Repeat Strings.csproj", "{608CB665-971F-4B99-BB28-F7B6D5C46CB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Repeat Strings", "02. Repeat Strings\02. Repeat Strings.csproj", "{608CB665-971F-4B99-BB28-F7B6D5C46CB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Substring", "03. Substring\03. Substring.csproj", "{604D1516-38EB-4459-8C5B-D29C0DAC7EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Text Filter", "04. Text Filter\04. Text Filter.csproj", "{7EAFF63E-2216-4057-8CDA-DFD34F68F31C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Digits, Letters and Other", "05. Digits, Letters and Other\05. Digits, Letters and Other.csproj", "{96E61561-2228-43EF-AFE9-CD8D581BAF14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{608CB665-971F-4B99-BB28-F7B6D5C46CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{608CB665-971F-4B99-BB28-F7B6D5C46CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{608CB665-971F-4B99-BB28-F7B6D5C46CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{604D1516-38EB-4459-8C5B-D29C0DAC7EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{604D1516-38EB-4459-8C5B-D29C0DAC7EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{604D1516-38EB-4459-8C5B-D29C0DAC7EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{604D1516-38EB-4459-8C5B-D29C0DAC7EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EAFF63E-2216-4057-8CDA-DFD34F68F31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAFF63E-2216-4057-8CDA-DFD34F68F31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAFF63E-2216-4057-8CDA-DFD34F68F31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAFF63E-2216-4057-8CDA-DFD34F68F31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E61561-2228-43EF-AFE9-CD8D581BAF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E61561-2228-43EF-AFE9-CD8D581BAF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E61561-2228-43EF-AFE9-CD8D581BAF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E61561-2228-43EF-AFE9-CD8D581BAF14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
