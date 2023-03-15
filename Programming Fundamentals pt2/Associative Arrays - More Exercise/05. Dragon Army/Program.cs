@@ -10,15 +10,7 @@ namespace _05._Dragon_Army
         {
             int n = int.Parse(Console.ReadLine());
 
-            Dictionary<string, List<Dragon>> dragons = new Dictionary<string, List<Dragon>>();
-            
-            int defaultHealth = 250;
-            int defaultDamage = 45;
-            int defaultArmor = 10;
-
-            double averageDamage = 0;
-            double averageArmor = 0;
-            double averageHealth = 0;
+            Dictionary<string, SortedDictionary<string, Dragon>> dragons = new Dictionary<string, SortedDictionary<string, Dragon>>();
 
             for (int i = 0; i < n; i++)
             {
@@ -30,84 +22,81 @@ namespace _05._Dragon_Army
                 string health = command[3];
                 string armor = command[4];
 
-                if (damage == "null")
-                {
-                    damage = defaultDamage.ToString();
-                    defaultDamage = int.Parse(damage);
-                }
-                if (health == "null")
-                {
-                    health = defaultHealth.ToString();
-                    defaultHealth = int.Parse(health);
-                }
-                if (armor == "null")
-                {
-                    armor = defaultArmor.ToString();
-                    defaultArmor = int.Parse(armor);
-                }
-
-                Dragon dragon = new Dragon();
-
-                dragon.Name = name;
-                dragon.Damage = int.Parse(damage);
-                dragon.Health = int.Parse(health);
-                dragon.Armor = int.Parse(armor);
-
-                foreach (var kvp in dragons)
-                {
-                    foreach (var drg in kvp.Value)
-                    {
-                        if (kvp.Key == type && drg.Name == name)
-                        {
-                            drg.Damage = int.Parse(damage);
-                            drg.Health = int.Parse(health);
-                            drg.Armor = int.Parse(armor);
-
-                            continue;
-                        }
-                    }
-                }
-
                 if (!dragons.ContainsKey(type))
                 {
-                    dragons.Add(type, new List<Dragon>());
+                    dragons.Add(type, new SortedDictionary<string, Dragon>());
                 }
 
-                dragons[type].Add(dragon);
+
+                if (dragons[type].ContainsKey(name))
+                {
+                    if (damage != "null")
+                    {
+                        dragons[type][name].Damage = double.Parse(damage);
+                    }
+                    else
+                    {
+                        dragons[type][name].Damage = 45;
+                    }
+                    if (health != "null")
+                    {
+                        dragons[type][name].Health = double.Parse(health);
+                    }
+                    else
+                    {
+                        dragons[type][name].Health = 250;
+                    }
+                    if (armor != "null")
+                    {
+                        dragons[type][name].Armor = double.Parse(armor);
+                    }
+                    else
+                    {
+                        dragons[type][name].Armor = 10;
+                    }
+                }
+                else
+                {
+                    dragons[type].Add(name, new Dragon());
+
+                    if (damage != "null")
+                    {
+                        dragons[type][name].Damage = double.Parse(damage);
+                    }
+                    if (health != "null")
+                    {
+                        dragons[type][name].Health = double.Parse(health);
+                    }
+                    if (armor != "null")
+                    {
+                        dragons[type][name].Armor = double.Parse(armor);
+                    }
+                }
             }
 
-            foreach (var dragon in dragons)
+            foreach (var dragonTYPE in dragons)
             {
-                foreach (var drg in dragon.Value)
-                {
-                    averageDamage += drg.Damage;
-                    averageArmor += drg.Armor;
-                    averageHealth += drg.Health;
-                }
+                double averageHealth = dragonTYPE.Value.Sum(x => x.Value.Health) / dragonTYPE.Value.Count();
+                double averageDamage = dragonTYPE.Value.Sum(x => x.Value.Damage) / dragonTYPE.Value.Count();
+                double averageArmor = dragonTYPE.Value.Sum(x => x.Value.Armor) / dragonTYPE.Value.Count();
 
-                averageDamage /= dragon.Value.Count;
-                averageHealth /= dragon.Value.Count;
-                averageArmor /= dragon.Value.Count;
+                Console.WriteLine($"{dragonTYPE.Key}::({averageDamage:f2}/{averageHealth:f2}/{averageArmor:f2})");
 
-                Console.WriteLine($"{dragon.Key}::({averageDamage:f2}/{averageHealth:f2}/{averageArmor:f2})");
-
-                foreach (var drg in dragon.Value.OrderBy(d => d.Name))
-                {
-                    Console.WriteLine($"-{drg.Name} -> damage: {drg.Damage}, health: {drg.Health}, armor: {drg.Armor}");
-                }
-
-                averageDamage = 0;
-                averageHealth = 0;
-                averageArmor = 0;
+                Console.WriteLine(string.Join(Environment.NewLine, dragonTYPE.Value.Select(x => $"-{x.Key} -> damage: {x.Value.Damage}, health: {x.Value.Health}, armor: {x.Value.Armor}")));
             }
         }
 
         public class Dragon
         {
-            public string Name { get; set; }
-            public int Damage { get; set; }
-            public int Health { get; set; }
-            public int Armor { get; set; }
+            public Dragon()
+            {
+                this.Damage = 45;
+                this.Armor = 10;
+                this.Health = 250;
+            }
+            public double Damage { get; set; }
+            public double Health { get; set; }
+            public double Armor { get; set; }
         }
     }
 }
