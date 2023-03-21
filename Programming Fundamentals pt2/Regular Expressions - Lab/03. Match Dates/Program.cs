@@ -9,7 +9,7 @@ namespace _03._Match_Dates
         {
             string input = Console.ReadLine();
 
-            string pattern = @"(?<day>\d{2})(.|-|/)(?<month>[A-Z][a-z]{2})\1(?<year>\d{4})";
+            string pattern = @"(?<day>\d{2})(.|-|\/)(?<month>[A-Z][a-z]{2})\1(?<year>\d{4})";
 
             Regex regex = new Regex(pattern);
 
