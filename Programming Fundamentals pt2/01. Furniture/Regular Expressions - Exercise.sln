@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Furniture", "01. Furniture\01. Furniture.csproj", "{BBF07380-3D48-41CC-B124-96C23F304072}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Furniture", "01. Furniture\01. Furniture.csproj", "{BBF07380-3D48-41CC-B124-96C23F304072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Race", "02. Race\02. Race.csproj", "{B0987066-6A35-4DCC-9AD7-7CA5AA153143}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Race", "02. Race\02. Race.csproj", "{B0987066-6A35-4DCC-9AD7-7CA5AA153143}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. SoftUni Bar Income", "03. SoftUni Bar Income\03. SoftUni Bar Income.csproj", "{5DAF1A38-9013-46E4-B6FC-908DF6562AF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Extract Emails", "06. Extract Emails\06. Extract Emails.csproj", "{613A1A24-DD01-42A3-9B4F-BCC1DCF14196}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{B0987066-6A35-4DCC-9AD7-7CA5AA153143}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0987066-6A35-4DCC-9AD7-7CA5AA153143}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0987066-6A35-4DCC-9AD7-7CA5AA153143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DAF1A38-9013-46E4-B6FC-908DF6562AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DAF1A38-9013-46E4-B6FC-908DF6562AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DAF1A38-9013-46E4-B6FC-908DF6562AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DAF1A38-9013-46E4-B6FC-908DF6562AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613A1A24-DD01-42A3-9B4F-BCC1DCF14196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613A1A24-DD01-42A3-9B4F-BCC1DCF14196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613A1A24-DD01-42A3-9B4F-BCC1DCF14196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613A1A24-DD01-42A3-9B4F-BCC1DCF14196}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

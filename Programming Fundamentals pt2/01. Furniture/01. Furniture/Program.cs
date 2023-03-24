@@ -11,7 +11,8 @@ namespace _01._Furniture
         {
             string input = string.Empty;
 
-            Dictionary<string, decimal> furnitures = new Dictionary<string, decimal>();
+            List<string> furnitures = new List<string>();
+            decimal totalSpend = 0;
 
             while ((input = Console.ReadLine()) != "Purchase")
             {
@@ -27,21 +28,18 @@ namespace _01._Furniture
                     decimal price = decimal.Parse(match.Groups["price"].Value);
                     int quantity = int.Parse(match.Groups["quantity"].Value);
 
-                    if (!furnitures.ContainsKey(name))
-                    {
-                        furnitures[name] = 0;
-                    }
+                    furnitures.Add(name);
 
-                    furnitures[name] += price * quantity;
+                    totalSpend += price * quantity;
                 }
             }
 
             Console.WriteLine("Bought furniture:");
-            foreach (string name in furnitures.Keys)
+            foreach (string name in furnitures)
             {
                 Console.WriteLine(name);
             }
-            Console.WriteLine("Total money spend: {0:f2}", furnitures.Values.Sum());
+            Console.WriteLine("Total money spend: {0:f2}", totalSpend);
         }
     }
 }

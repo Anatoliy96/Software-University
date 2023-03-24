@@ -9,7 +9,7 @@ namespace _02._Race
     {
         static void Main(string[] args)
         {
-            string[] command = Console.ReadLine().Split(",");
+            string[] command = Console.ReadLine().Split(", ");
             string text = Console.ReadLine();
 
             Dictionary<string, int> people = new Dictionary<string, int>();
@@ -27,7 +27,7 @@ namespace _02._Race
 
                 MatchCollection letter = lettersRegex.Matches(text);
                 MatchCollection digit = digitsRegex.Matches(text);
-                
+
                 for (int i = 0; i < letter.Count; i++)
                 {
                     result += letter[i];
@@ -38,19 +38,20 @@ namespace _02._Race
                     sum += int.Parse(match.Groups["digits"].Value);
                 }
 
-                foreach (var name in command)
+                if (!people.ContainsKey(result))
                 {
-                    if (name.Contains(result))
+                    if (command.Contains(result))
                     {
-                        if (!people.ContainsKey(name))
-                        {
-                            people.Add(name, sum);
-                        }
-                        else
-                        {
-                            people[name] += sum;
-                        }
+                        people.Add(result, sum);
                     }
+                }
+                else if (people.ContainsKey(result))
+                {
+                    if (command.Contains(result))
+                    {
+                        people[result] += sum;
+                    }
+
                 }
 
                 result = string.Empty;
@@ -61,9 +62,9 @@ namespace _02._Race
 
             var sortedDictonary = people.OrderByDescending(x => x.Value).Take(3);
 
-            Console.WriteLine("1st place: {0}",sortedDictonary.ElementAt(0).Key);
-            Console.WriteLine("2nd place:{0}",sortedDictonary.ElementAt(1).Key);
-            Console.WriteLine("3rd place:{0}",sortedDictonary.ElementAt(2).Key);
+            Console.WriteLine($"1st place: {sortedDictonary.ElementAt(0).Key}");
+            Console.WriteLine($"2nd place: {sortedDictonary.ElementAt(1).Key}");
+            Console.WriteLine($"3rd place: {sortedDictonary.ElementAt(2).Key}");
 
         }
     }
