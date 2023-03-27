@@ -63,7 +63,7 @@ namespace _03._Need_for_Speed_III
                 else if (command[0] == "Refuel")
                 {
                     string car = command[1];
-                    int fuel = int.Parse(command[2]);
+                    int fuel = int.Parse (command[2]);
 
                     if (cars.ContainsKey(car))
                     {
@@ -117,4 +117,3 @@ namespace _03._Need_for_Speed_III
         }
     }
 }
-

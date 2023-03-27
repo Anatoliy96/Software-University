@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. The Imitation Game", "01. The Imitation Game\01. The Imitation Game.csproj", "{A91092EF-335B-4725-953E-7012C2934ED6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. The Imitation Game", "01. The Imitation Game\01. The Imitation Game.csproj", "{591F8366-A0C4-42DA-A686-A5C73AAE0BBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Destination Mapper", "02. Destination Mapper\02. Destination Mapper.csproj", "{DC73A50C-4269-4F7F-AAA2-3301A1F97F17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Destination Mapper", "02. Destination Mapper\02. Destination Mapper.csproj", "{A43BB4AF-F702-4A4E-9422-1E9F07333CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Need for Speed III", "03. Need for Speed III\03. Need for Speed III.csproj", "{C9CB5151-DA17-4DB5-B50E-000262BA0850}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Need for Speed III", "03. Need for Speed III\03. Need for Speed III.csproj", "{6017315A-574F-49E8-AF39-26694BACE14B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A91092EF-335B-4725-953E-7012C2934ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A91092EF-335B-4725-953E-7012C2934ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A91092EF-335B-4725-953E-7012C2934ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A91092EF-335B-4725-953E-7012C2934ED6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC73A50C-4269-4F7F-AAA2-3301A1F97F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC73A50C-4269-4F7F-AAA2-3301A1F97F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC73A50C-4269-4F7F-AAA2-3301A1F97F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC73A50C-4269-4F7F-AAA2-3301A1F97F17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9CB5151-DA17-4DB5-B50E-000262BA0850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9CB5151-DA17-4DB5-B50E-000262BA0850}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9CB5151-DA17-4DB5-B50E-000262BA0850}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9CB5151-DA17-4DB5-B50E-000262BA0850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591F8366-A0C4-42DA-A686-A5C73AAE0BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591F8366-A0C4-42DA-A686-A5C73AAE0BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591F8366-A0C4-42DA-A686-A5C73AAE0BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591F8366-A0C4-42DA-A686-A5C73AAE0BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43BB4AF-F702-4A4E-9422-1E9F07333CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43BB4AF-F702-4A4E-9422-1E9F07333CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43BB4AF-F702-4A4E-9422-1E9F07333CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43BB4AF-F702-4A4E-9422-1E9F07333CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6017315A-574F-49E8-AF39-26694BACE14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6017315A-574F-49E8-AF39-26694BACE14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6017315A-574F-49E8-AF39-26694BACE14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6017315A-574F-49E8-AF39-26694BACE14B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F45458B6-FAA1-4E05-A62F-CF8E5EEC74B8}
+		SolutionGuid = {5EDC1B41-FA64-48C9-834D-DC56C1C9F6A2}
 	EndGlobalSection
 EndGlobal

@@ -36,4 +36,3 @@ namespace _02._Destination_Mapper
         }
     }
 }
-

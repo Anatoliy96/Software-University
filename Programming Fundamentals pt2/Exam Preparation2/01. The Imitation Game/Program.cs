@@ -9,7 +9,7 @@ namespace _01._The_Imitation_Game
             string encryptedMessage = Console.ReadLine();
             string[] commands = Console.ReadLine().Split("|");
             string letters = string.Empty;
-
+            
             while (commands[0] != "Decode")
             {
                 if (commands[0] == "Move")
@@ -48,4 +48,3 @@ namespace _01._The_Imitation_Game
         }
     }
 }
-
