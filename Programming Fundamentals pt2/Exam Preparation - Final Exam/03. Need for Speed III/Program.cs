@@ -26,7 +26,6 @@ namespace _03._Need_for_Speed_III
                     cars[car].Fuel = fuel;
 
                 }
-                //cars[car].Add(mileAge, fuel);
             }
 
             string[] command = Console.ReadLine().Split(" : ");
