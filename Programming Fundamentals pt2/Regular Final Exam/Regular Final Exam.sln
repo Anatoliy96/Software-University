@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Hogwarts", "01. Hogwarts\01. Hogwarts.csproj", "{26B72E20-F46C-42E5-8467-2EE7AC9A3744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Degustation Party", "03. Degustation Party\03. Degustation Party.csproj", "{60F0A2ED-6D81-488B-84EE-84C900410780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Encrypting Password", "02. Encrypting Password\02. Encrypting Password.csproj", "{4BFD8908-13B2-436F-B3AB-389F95808CE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26B72E20-F46C-42E5-8467-2EE7AC9A3744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B72E20-F46C-42E5-8467-2EE7AC9A3744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B72E20-F46C-42E5-8467-2EE7AC9A3744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B72E20-F46C-42E5-8467-2EE7AC9A3744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F0A2ED-6D81-488B-84EE-84C900410780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F0A2ED-6D81-488B-84EE-84C900410780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F0A2ED-6D81-488B-84EE-84C900410780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F0A2ED-6D81-488B-84EE-84C900410780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BFD8908-13B2-436F-B3AB-389F95808CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BFD8908-13B2-436F-B3AB-389F95808CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BFD8908-13B2-436F-B3AB-389F95808CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BFD8908-13B2-436F-B3AB-389F95808CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F203E591-5827-4F90-B9C9-A82C6EA4AF0D}
+	EndGlobalSection
+EndGlobal
