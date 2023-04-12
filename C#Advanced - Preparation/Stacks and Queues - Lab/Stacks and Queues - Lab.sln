@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Reverse a String", "1. Reverse a String\1. Reverse a String.csproj", "{298A694C-9758-48BB-B288-9A8E8002B234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1. Reverse a String", "1. Reverse a String\1. Reverse a String.csproj", "{298A694C-9758-48BB-B288-9A8E8002B234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Stack Sum", "2. Stack Sum\2. Stack Sum.csproj", "{40C152AE-A707-4B45-9E7F-1E5EF4B20004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2. Stack Sum", "2. Stack Sum\2. Stack Sum.csproj", "{40C152AE-A707-4B45-9E7F-1E5EF4B20004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Simple Calculator", "3. Simple Calculator\3. Simple Calculator.csproj", "{9B5A42E9-217F-4522-861B-28B15EAA712D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3. Simple Calculator", "3. Simple Calculator\3. Simple Calculator.csproj", "{9B5A42E9-217F-4522-861B-28B15EAA712D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Matching Brackets", "4. Matching Brackets\4. Matching Brackets.csproj", "{6D724991-C98F-490C-ABC8-1BA70591F2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4. Matching Brackets", "4. Matching Brackets\4. Matching Brackets.csproj", "{6D724991-C98F-490C-ABC8-1BA70591F2D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Print Even Numbers", "5. Print Even Numbers\5. Print Even Numbers.csproj", "{D07A9E00-BA1A-43A6-A328-505FA15AD619}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6D724991-C98F-490C-ABC8-1BA70591F2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D724991-C98F-490C-ABC8-1BA70591F2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D724991-C98F-490C-ABC8-1BA70591F2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07A9E00-BA1A-43A6-A328-505FA15AD619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07A9E00-BA1A-43A6-A328-505FA15AD619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07A9E00-BA1A-43A6-A328-505FA15AD619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07A9E00-BA1A-43A6-A328-505FA15AD619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
