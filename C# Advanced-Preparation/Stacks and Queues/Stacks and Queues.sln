@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Reverse a String", "1. Reverse a String\1. Reverse a String.csproj", "{23FF480E-4B31-48E8-90D5-9FDF54232874}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Stack Sum", "2. Stack Sum\2. Stack Sum.csproj", "{A3F7D5A1-895B-4FE9-895D-A9ED05D3E70F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{23FF480E-4B31-48E8-90D5-9FDF54232874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23FF480E-4B31-48E8-90D5-9FDF54232874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23FF480E-4B31-48E8-90D5-9FDF54232874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F7D5A1-895B-4FE9-895D-A9ED05D3E70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F7D5A1-895B-4FE9-895D-A9ED05D3E70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F7D5A1-895B-4FE9-895D-A9ED05D3E70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F7D5A1-895B-4FE9-895D-A9ED05D3E70F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
