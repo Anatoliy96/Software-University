@@ -1,0 +1,16 @@
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\bin\Debug\net5.0\1. Reverse a String.exe
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\bin\Debug\net5.0\1. Reverse a String.deps.json
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\bin\Debug\net5.0\1. Reverse a String.runtimeconfig.json
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\bin\Debug\net5.0\1. Reverse a String.runtimeconfig.dev.json
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\bin\Debug\net5.0\1. Reverse a String.dll
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\bin\Debug\net5.0\ref\1. Reverse a String.dll
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\bin\Debug\net5.0\1. Reverse a String.pdb
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.csproj.AssemblyReference.cache
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.GeneratedMSBuildEditorConfig.editorconfig
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.AssemblyInfoInputs.cache
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.AssemblyInfo.cs
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.csproj.CoreCompileInputs.cache
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.dll
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\ref\1. Reverse a String.dll
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.pdb
+C:\Anatoliy\Projects&Databases\Software-University\C# Advanced-Preparation\Stacks and Queues\1. Reverse a String\obj\Debug\net5.0\1. Reverse a String.genruntimeconfig.cache
