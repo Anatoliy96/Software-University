@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. Songs Queue", "06. Song
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07. Truck Tour", "07. Truck Tour\07. Truck Tour.csproj", "{0AD9C043-EAB4-492D-94DC-52962C345BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Balanced Parenthesis", "08. Balanced Parenthesis\08. Balanced Parenthesis.csproj", "{B51881EA-D393-4C72-B20F-A572F4F0009A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08. Balanced Parenthesis", "08. Balanced Parenthesis\08. Balanced Parenthesis.csproj", "{B51881EA-D393-4C72-B20F-A572F4F0009A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. Simple Text Editor", "09. Simple Text Editor\09. Simple Text Editor.csproj", "{68ADA56D-80D4-4F42-91A4-C0443889F4EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09. Simple Text Editor", "09. Simple Text Editor\09. Simple Text Editor.csproj", "{68ADA56D-80D4-4F42-91A4-C0443889F4EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Crossroads", "10. Crossroads\10. Crossroads.csproj", "{89DC7EDD-D525-49B7-B241-2A97A00824A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{68ADA56D-80D4-4F42-91A4-C0443889F4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68ADA56D-80D4-4F42-91A4-C0443889F4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68ADA56D-80D4-4F42-91A4-C0443889F4EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89DC7EDD-D525-49B7-B241-2A97A00824A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DC7EDD-D525-49B7-B241-2A97A00824A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DC7EDD-D525-49B7-B241-2A97A00824A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DC7EDD-D525-49B7-B241-2A97A00824A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
