@@ -28,7 +28,7 @@ namespace _02._Average_Student_Grades
 
             foreach (var student in students)
             {
-                Console.WriteLine($"{student.Key} -> {string.Join(" ", student.Value)} (avg: {student.Value.Average():f2})");
+                Console.WriteLine($"{student.Key} -> {string.Join(" ", student.Value.Select(g => g.ToString("F2")))} (avg: {student.Value.Average():f2})");
             }
         }
     }
