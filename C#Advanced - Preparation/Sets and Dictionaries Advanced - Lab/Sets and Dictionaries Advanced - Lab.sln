@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Average Student Grades"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Largest 3 Numbers", "03. Largest 3 Numbers\03. Largest 3 Numbers.csproj", "{63BEE86B-B111-4680-855F-95EAE9289977}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Product Shop", "04. Product Shop\04. Product Shop.csproj", "{0FCA1B47-95B7-4C9C-89BB-AB2F1C338BCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. CitiesByContinentAndCountry", "05. CitiesByContinentAndCountry\05. CitiesByContinentAndCountry.csproj", "{3961A7E7-28A9-44E1-B5C3-CD2F71A5DE23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{63BEE86B-B111-4680-855F-95EAE9289977}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63BEE86B-B111-4680-855F-95EAE9289977}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63BEE86B-B111-4680-855F-95EAE9289977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FCA1B47-95B7-4C9C-89BB-AB2F1C338BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCA1B47-95B7-4C9C-89BB-AB2F1C338BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCA1B47-95B7-4C9C-89BB-AB2F1C338BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCA1B47-95B7-4C9C-89BB-AB2F1C338BCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3961A7E7-28A9-44E1-B5C3-CD2F71A5DE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3961A7E7-28A9-44E1-B5C3-CD2F71A5DE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3961A7E7-28A9-44E1-B5C3-CD2F71A5DE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3961A7E7-28A9-44E1-B5C3-CD2F71A5DE23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
