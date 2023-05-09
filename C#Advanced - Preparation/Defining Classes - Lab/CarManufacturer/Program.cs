@@ -8,8 +8,11 @@
             car.Make = "Audi";
             car.Model = "A3";
             car.Year = 2001;
+            car.FuelQuantity = 200;
+            car.FuelConsumption = 7;
 
-            Console.WriteLine($"Make: {car.Make}\nModel: {car.Model}\nYear: {car.Year}");
+            car.Drive(2000);
+            Console.WriteLine(car.WhoAmI());
         }
     }
 }
