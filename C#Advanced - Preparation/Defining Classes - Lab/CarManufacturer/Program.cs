@@ -4,15 +4,21 @@
     {
         static void Main()
         {
-            Car car = new Car();
-            car.Make = "Audi";
-            car.Model = "A3";
-            car.Year = 2001;
-            car.FuelQuantity = 200;
-            car.FuelConsumption = 7;
+            string make = Console.ReadLine();
+            string model = Console.ReadLine();
+            int year = int.Parse(Console.ReadLine());
+            double fuelQuantity = double.Parse(Console.ReadLine());
+            double fuelConsumption = double.Parse(Console.ReadLine());
 
-            car.Drive(2000);
-            Console.WriteLine(car.WhoAmI());
+            Car firstCar = new Car();
+            Car secondCar = new Car(make, model, year);
+            Car thirdCar = new Car(make, model, year, fuelQuantity, fuelConsumption);
+
+            Console.WriteLine(firstCar.WhoAmI());
+
+            Console.WriteLine(secondCar.WhoAmI());
+
+            Console.WriteLine(thirdCar.WhoAmI());
         }
     }
 }

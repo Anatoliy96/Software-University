@@ -8,6 +8,27 @@ namespace CarManufacturer
 {
     public class Car
     {
+        public Car()
+        {
+            this.Make = "VW";
+            this.Model = "Golf";
+            this.Year = 2025;
+            this.FuelQuantity = 200;
+            this.FuelConsumption = 10;
+        }
+        public Car(string make, string model, int year) : this()
+        {
+            this.Make = make;
+            this.Model = model;
+            this.Year = year;
+        }
+        public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption)
+            : this(make, model, year)
+        {
+            this.FuelQuantity = fuelQuantity;
+            this.FuelConsumption= fuelConsumption;
+        }
+
         private string make;
         private string model;
         private int year;
@@ -27,15 +48,15 @@ namespace CarManufacturer
             if (fuelQuantity - fuelNeed > 0)
             {
                 fuelQuantity -= fuelNeed;
-                
+
             }
             else
             {
                 Console.WriteLine("Not enough fuel to perform this trip!");
             }
-            
+
         }
-        public string WhoAmI() 
+        public string WhoAmI()
         {
             return $"Make: {this.Make}\nModel: {this.Model}\nYear: {this.Year}\nFuel: {this.FuelQuantity:f2}";
         }
