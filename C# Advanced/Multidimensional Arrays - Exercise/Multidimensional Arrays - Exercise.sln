@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. Bombs", "8. Bombs\8. Bom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. Miner", "9. Miner\9. Miner.csproj", "{3F5CF5EB-889B-4023-86DC-F554EDABE141}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Radioactive Mutant Vampire Bunnies", "10. Radioactive Mutant Vampire Bunnies\10. Radioactive Mutant Vampire Bunnies.csproj", "{161B5258-5322-42C4-967A-76A1514EBBFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{3F5CF5EB-889B-4023-86DC-F554EDABE141}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F5CF5EB-889B-4023-86DC-F554EDABE141}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F5CF5EB-889B-4023-86DC-F554EDABE141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{161B5258-5322-42C4-967A-76A1514EBBFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161B5258-5322-42C4-967A-76A1514EBBFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161B5258-5322-42C4-967A-76A1514EBBFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{161B5258-5322-42C4-967A-76A1514EBBFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
