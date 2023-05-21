@@ -35,7 +35,7 @@ while (input[0] != "exam finished")
         {
             contestCount.Add(contest, 1);
         }
-        else
+        else 2
         {
             contestCount[contest]++;
         }
