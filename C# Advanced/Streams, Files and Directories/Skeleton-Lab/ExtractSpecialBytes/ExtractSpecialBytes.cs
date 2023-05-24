@@ -2,6 +2,8 @@
 {
     using System;
     using System.IO;
+    using System.Linq;
+
     public class ExtractSpecialBytes
     {
         static void Main()
@@ -15,6 +17,23 @@
 
         public static void ExtractBytesFromBinaryFile(string binaryFilePath, string bytesFilePath, string outputPath)
         {
+            byte[] bytesToExtract = File.ReadAllText(bytesFilePath)
+                .Split(new[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(b => byte.Parse(b))
+                .ToArray();
+
+            using (FileStream inputStream = new FileStream(binaryFilePath, FileMode.Open))
+            using (FileStream outputStream = new FileStream(outputPath, FileMode.Create))
+            {
+                int currentByte;
+                while ((currentByte = inputStream.ReadByte()) != -1)
+                {
+                    if (bytesToExtract.Contains((byte)currentByte))
+                    {
+                        outputStream.WriteByte((byte)currentByte);
+                    }
+                }
+            }
         }
     }
 }
