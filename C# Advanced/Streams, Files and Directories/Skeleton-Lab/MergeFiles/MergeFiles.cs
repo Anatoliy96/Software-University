@@ -15,11 +15,24 @@
 
         public static void MergeTextFiles(string firstInputFilePath, string secondInputFilePath, string outputFilePath)
         {
-            using FileStream fs1 = File.Open(firstInputFilePath, FileMode.Open);
-            using FileStream fs2 = File.Open(secondInputFilePath, FileMode.Open);
-            using FileStream fs3 = File.Open(outputFilePath, FileMode.Append);
+            using StreamReader streamReader = new StreamReader(firstInputFilePath);
+            using StreamReader streamReader1 = new StreamReader(secondInputFilePath);
+            using StreamWriter write = new StreamWriter(outputFilePath);
 
-            
+            string line1 = string.Empty;
+            string line2 = string.Empty;
+
+            while ((line1 = streamReader.ReadLine()) != null && (line2 = streamReader1.ReadLine()) != null)
+            {
+                if (line2 != null)
+                {
+                    write.WriteLine(line1);
+                }
+                if (line1 != null)
+                {
+                    write.WriteLine(line2);
+                }
+            }
         }
     }
 }
