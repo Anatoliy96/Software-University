@@ -11,6 +11,8 @@ namespace CarManufacturer
         private string make;
         private string model;
         private int year;
+        private double fuelQuantity;
+        private double fuelConsumption;
 
         public string Make
         {
@@ -29,6 +31,42 @@ namespace CarManufacturer
             get { return year; }
             set { year = value; }
         }
+        public double FuelQuantity
+        {
+            get { return fuelQuantity; }
+            set { fuelQuantity = value; }
+        }
 
+        public double FuelConsumption
+        {
+            get { return fuelConsumption; }
+            set { fuelConsumption = value; }
+        }
+
+        public void Drive(double distance)
+        {
+            double fuelNeeded = fuelQuantity - distance;
+
+            if (fuelNeeded * fuelConsumption >= 0)
+            {
+                fuelQuantity -= distance;
+            }
+            else
+            {
+                Console.WriteLine("Not enough fuel to perform this trip!");
+            }
+        }
+
+        public string WhoAmI()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            stringBuilder.AppendLine($"Make: {this.Make}");
+            stringBuilder.AppendLine($"Model: {this.Model}");
+            stringBuilder.AppendLine($"Year: {this.Year}");
+            stringBuilder.AppendLine($"Fuel: {this.FuelQuantity:F2}");
+
+            return stringBuilder.ToString();
+        }
     }
 }
