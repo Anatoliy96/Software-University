@@ -4,14 +4,23 @@
     {
         static void Main()
         {
-            Person person1 = new Person();
-            person1.Name = "Peter";
-            person1.Age = 20;
+            int n = int.Parse(Console.ReadLine());
 
-            Person person2 = new Person(34);
-            person1.Name = "George";
+            Family family = new Family();
 
-            Person person3 = new Person("Jose", 20);
+            for (int i = 0; i < n; i++)
+            {
+                string[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                string name = input[0];
+                int age = int.Parse(input[1]);
+
+                Person person = new Person(name, age);
+
+                family.AddMember(person);
+            }
+
+            Person oldersPerson = family.GetOldestMember();
+            Console.WriteLine($"{oldersPerson.Name} {oldersPerson.Age}");
         }
     }
 }
