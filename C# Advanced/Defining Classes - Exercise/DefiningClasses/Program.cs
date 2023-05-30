@@ -8,13 +8,10 @@
             person1.Name = "Peter";
             person1.Age = 20;
 
-            Person person2 = new Person();
+            Person person2 = new Person(34);
             person1.Name = "George";
-            person1.Age = 18;
 
-            Person person3 = new Person();
-            person1.Name = "Jose";
-            person1.Age = 43;
+            Person person3 = new Person("Jose", 20);
         }
     }
 }

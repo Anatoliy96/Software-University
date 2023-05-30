@@ -8,6 +8,22 @@ namespace DefiningClasses
 {
     public class Person
     {
+        public Person()
+        {
+            Name = "No name";
+            Age = 1;
+        }
+        public Person(int age) : this()
+        {
+            Name = "No name";
+            Age = age;
+        }
+        public Person(string name, int age) : this(age)
+        {
+            Name = name;
+            Age = age;
+        }
+
         private string name;
         private int age;
 
