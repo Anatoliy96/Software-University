@@ -4,28 +4,14 @@
     {
         static void Main()
         {
-            int n = int.Parse(Console.ReadLine());
+            string firstDate = Console.ReadLine();
+            string secondDate = Console.ReadLine();
 
-            List<Person> persons = new List<Person>();
+            DateModifier dateModifier = new DateModifier();
 
-            for (int i = 0; i < n; i++)
-            {
-                string[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                string name = input[0];
-                int age = int.Parse(input[1]);
+            int diffrence = dateModifier.DiffrenceBetweenTwoDates(firstDate, secondDate);
 
-                Person person = new Person(name, age);
-
-                persons.Add(person);
-            }
-
-            foreach (var person in persons.OrderBy(p => p.Name))
-            {
-                if (person.Age > 30)
-                {
-                    Console.WriteLine($"{person.Name} - {person.Age}");
-                }
-            }
+            Console.WriteLine(diffrence);
         }
     }
 }
