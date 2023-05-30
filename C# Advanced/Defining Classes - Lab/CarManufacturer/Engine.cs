@@ -11,11 +11,11 @@ namespace CarManufacturer
         private int hoursePower;
         private double cubicCapacity;
 
-        public Engine(int hoursePower, double cubicCapacity)
-        {
-            HoursePower = hoursePower;
-            CubicCapacity = cubicCapacity;
-        }
+        //public Engine(int hoursePower, double cubicCapacity)
+        //{
+        //    HoursePower = hoursePower;
+        //    CubicCapacity = cubicCapacity;
+        //}
 
         public int HoursePower
         {
@@ -29,5 +29,18 @@ namespace CarManufacturer
             set { cubicCapacity = value; }
         }
 
+        public int GetHoursePower(string[] splitted)
+        {
+            int hoursePower = int.Parse(splitted[0]);
+
+            return hoursePower;
+        }
+
+        public double GetCubicCapacity(string[] splitted)
+        {
+            double cubicCapacity = double.Parse(splitted[0]);
+
+            return cubicCapacity;
+        }
     }
 }

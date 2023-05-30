@@ -16,33 +16,47 @@ namespace CarManufacturer
         private Engine engine;
         private Tire[] tires;
 
-        public Car()
-        {
-            Make = "VW";
-            Model = "Golf";
-            Year = 2025;
-            FuelQuantity = 200;
-            FuelConsumption = 10;
-        }
+        //public Car()
+        //{
+        //    Make = "VW";
+        //    Model = "Golf";
+        //    Year = 2025;
+        //    FuelQuantity = 200;
+        //    FuelConsumption = 10;
+        //}
 
-        public Car(string make, string model, int year) : this()
-        {
-            this.Make = make;
-            this.Model = model;
-            this.Year = year;
-        }
+        //public Car(string make, string model, int year) : this()
+        //{
+        //    this.Make = make;
+        //    this.Model = model;
+        //    this.Year = year;
+        //}
 
-        public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption):this(make, model, year)
-        {
-            this.FuelQuantity = fuelQuantity;
-            this.FuelConsumption = fuelConsumption;
-        }
+        //public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption):this(make, model, year)
+        //{
+        //    this.FuelQuantity = fuelQuantity;
+        //    this.FuelConsumption = fuelConsumption;
+        //}
 
-        public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption, Engine engine, Tire[] tires)
-            : this(make, model, year, fuelQuantity, fuelConsumption)
+        //public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption, Engine engine, Tire[] tires)
+        //    : this(make, model, year, fuelQuantity, fuelConsumption)
+        //{
+        //    Engine = engine;
+        //    Tires = tires;
+        //}
+
+        public Car(string make, string model, int year, int horsePower, double fuelQuantity,
+          double fuelConsumption, int engineIndex, int tiresIndex, double totalPressure)
         {
-            Engine = engine;
-            Tires = tires;
+            Make = make;
+            Model = model;
+            Year = year;
+            HorsePower = horsePower;
+            FuelQuantity = fuelQuantity;
+            FuelConsumption = fuelConsumption;
+            EngineIndex = engineIndex;
+            TiresIndex = tiresIndex;
+            TotalPressure = totalPressure;
         }
 
         public string Make
@@ -74,19 +88,31 @@ namespace CarManufacturer
             set { fuelConsumption = value; }
         }
 
-        public Engine Engine
-        {
-            get { return engine; }
-            set { engine = value; }
-        }
-        
-        public Tire[] Tires
-        {
-            get { return tires; }
-            set { tires = value; }
-        }
+        public int HorsePower { get; set; }
 
+        public int EngineIndex { get; set; }
 
+        public int TiresIndex { get; set; }
+
+        public double TotalPressure { get; set; }
+        //public Engine Engine
+        //{
+        //    get { return engine; }
+        //    set { engine = value; }
+        //}
+
+        //public Tire[] Tires
+        //{
+        //    get { return tires; }
+        //    set { tires = value; }
+        //}
+
+        public double Drive20Kilometers(double fuelQuantity, double fuelConsumption)
+        {
+            fuelQuantity -= (FuelConsumption / 100) * 20;
+
+            return fuelQuantity;
+        }
         public void Drive(double distance)
         {
             double fuelNeeded = distance * fuelConsumption;
