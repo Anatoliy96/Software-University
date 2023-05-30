@@ -6,7 +6,7 @@
         {
             int n = int.Parse(Console.ReadLine());
 
-            Family family = new Family();
+            List<Person> persons = new List<Person>();
 
             for (int i = 0; i < n; i++)
             {
@@ -16,11 +16,16 @@
 
                 Person person = new Person(name, age);
 
-                family.AddMember(person);
+                persons.Add(person);
             }
 
-            Person oldersPerson = family.GetOldestMember();
-            Console.WriteLine($"{oldersPerson.Name} {oldersPerson.Age}");
+            foreach (var person in persons.OrderBy(p => p.Name))
+            {
+                if (person.Age > 30)
+                {
+                    Console.WriteLine($"{person.Name} - {person.Age}");
+                }
+            }
         }
     }
 }
