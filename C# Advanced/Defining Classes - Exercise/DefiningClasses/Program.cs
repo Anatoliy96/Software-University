@@ -1,4 +1,6 @@
-﻿namespace DefiningClasses
+﻿using System.Linq;
+
+namespace DefiningClasses
 {
     public class StartUp
     {
@@ -7,65 +9,89 @@
             int n = int.Parse(Console.ReadLine());
 
             List<Car> cars = new List<Car>();
+            List<Engine> engines = new List<Engine>();
+
 
             for (int i = 0; i < n; i++)
             {
-                string[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                string model = input[0];
-                int engineSpeed = int.Parse(input[1]);
-                int enginePower = int.Parse(input[2]);
-                int cargoWeight = int.Parse(input[3]);
-                string cargoType = input[4];
-                double tire1Pressure = double.Parse(input[5]);
-                int tire1Age = int.Parse(input[6]);
-                double tire2Pressure = double.Parse(input[7]);
-                int tire2Age = int.Parse(input[8]);
-                double tire3Pressure = double.Parse(input[9]);
-                int tire3Age = int.Parse(input[10]);
-                double tire4Pressure = double.Parse(input[11]);
-                int tire4Age = int.Parse(input[12]);
+                string[] enginesInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
-                var tires = new Tires[4]
-                {
-                    new Tires(tire1Pressure, tire1Age),
-                    new Tires(tire2Pressure, tire2Age),
-                    new Tires(tire3Pressure, tire3Age),
-                    new Tires(tire4Pressure, tire4Age),
-                };
+                Engine engine = CreateEngine(enginesInput);
 
-                Engine engine = new Engine(engineSpeed, enginePower);
-                Cargo cargo = new Cargo(cargoType, cargoWeight);
-                Car car = new Car(model, engine, cargo, tires);
+                engines.Add(engine);
+            }
+
+            int m = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < m; i++)
+            {
+                string[] carsInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+                Car car = CreateCar(carsInput, engines);
 
                 cars.Add(car);
             }
 
-            string command = Console.ReadLine();
+            foreach (var car in cars)
+            {
+                Console.WriteLine(car.ToString());
+            }
+        }
+        static Engine CreateEngine(string[] enginePropeties)
+        {
+            Engine engine = new(enginePropeties[0], int.Parse(enginePropeties[1]));
 
-            if (command == "fragile")
+            if (enginePropeties.Length > 2)
             {
-                foreach (var car in cars)
+                int displacement;
+
+                bool isDigit = int.TryParse(enginePropeties[2], out displacement);
+
+                if (isDigit)
                 {
-                    foreach (var tire in car.Tires)
-                    {
-                        if (car.Cargo.Type == command && tire.Pressure < 1)
-                        {
-                            Console.WriteLine($"{car.Model}");
-                            return;
-                        }
-                    }
+                    engine.Displacement = displacement;
+                }
+                else
+                {
+                    engine.Efficiency = enginePropeties[2];
+                }
+
+                if (enginePropeties.Length > 3)
+                {
+                    engine.Efficiency = enginePropeties[3];
                 }
             }
-            else if (command == "flammable")
+
+            return engine;
+        }
+        static Car CreateCar(string[] carPropeties, List<Engine> engines)
+        {
+            Engine engine = engines.Find(x => x.Model == carPropeties[1]);
+
+            Car car = new(carPropeties[0], engine);
+
+            if (carPropeties.Length > 2)
             {
-                foreach (var car in cars)
+                int weight;
+
+                bool isDigit = int.TryParse(carPropeties[2], out weight);
+
+                if (isDigit)
                 {
-                    if (car.Cargo.Type == command && car.Engine.Power > 250)
-                    {
-                        Console.WriteLine($"{car.Model}");
-                    }
+                    car.Weight = weight;
+                }
+                else
+                {
+                    car.Color = carPropeties[2];
+                }
+
+                if (carPropeties.Length > 3)
+                {
+                    car.Color = carPropeties[3];
                 }
             }
+
+            return car;
         }
     }
 }
