@@ -8,30 +8,36 @@ namespace DefiningClasses
 {
     public class Car
     {
-        public Car(string model, Engine engine)
+        public Car(
+        string model,
+        int speed,
+        int power,
+        int weight,
+        string type,
+        double tyre1pressure,
+        int tyre1age,
+        double tyre2pressure,
+        int tyre2age,
+        double tyre3pressure,
+        int tyre3age,
+        double tyre4pressure,
+        int tyre4age)
         {
+
             Model = model;
-            Engine = engine;
+            Engine = new(speed, power);
+            Cargo = new(weight, type);
+            Tires = new Tyres[4];
+            Tires[0] = new(tyre1pressure, tyre1age);
+            Tires[1] = new(tyre2pressure, tyre2age);
+            Tires[2] = new(tyre3pressure, tyre3age);
+            Tires[3] = new(tyre4pressure, tyre4age);
         }
 
         public string Model { get; set; }
         public Engine Engine { get; set; }
-        public int Weight { get; set; }
-        public string Color { get; set; }
+        public Cargo Cargo { get; set; }
+        public Tyres[] Tires { get; set; }
 
-        public override string ToString()
-        {
-            string weight = Weight == 0 ? "n/a" : Weight.ToString(); // if Weight equals 0 - default value, then string takes value "n/a" else takes string value of Weight for example "1300"
-            string color = Color ?? "n/a"; // if Color is null then string takes value "n/a" else it takes Color value for example "Silver"
-
-            StringBuilder sb = new();
-
-            sb.AppendLine($"{Model}:");
-            sb.AppendLine($"  {Engine.ToString()}");
-            sb.AppendLine($"  Weight: {weight}");
-            sb.AppendLine($"  Color: {color}");
-
-            return sb.ToString().TrimEnd();
-        }
     }
 }

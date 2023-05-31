@@ -8,13 +8,13 @@ namespace DefiningClasses
 {
     public class Cargo
     {
-        public Cargo(string? cargoType, int cargoWeight)
+        public Cargo(int weight, string type)
         {
-            Type = cargoType;
-            Weight = cargoWeight;
+            Weight = weight;
+            Type = type;
         }
 
-        public string Type { get; set; }
         public int Weight { get; set; }
+        public string Type { get; set; }
     }
 }

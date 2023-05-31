@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DefiningClasses
 {
-    public class Tires
+    public class Tyres
     {
-        public Tires(double tire1Pressure, int tire1Age)
+        public Tyres(double tire1Pressure, int tire1Age)
         {
             Pressure = tire1Pressure;
             Age = tire1Age;
