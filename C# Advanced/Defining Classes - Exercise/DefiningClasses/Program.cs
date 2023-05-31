@@ -10,42 +10,61 @@
 
             for (int i = 0; i < n; i++)
             {
-                string[] input = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-
+                string[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 string model = input[0];
-                double fuelAmount = double.Parse(input[1]);
-                double fuelConsumptionPerKilometer = double.Parse(input[2]);
+                int engineSpeed = int.Parse(input[1]);
+                int enginePower = int.Parse(input[2]);
+                int cargoWeight = int.Parse(input[3]);
+                string cargoType = input[4];
+                double tire1Pressure = double.Parse(input[5]);
+                int tire1Age = int.Parse(input[6]);
+                double tire2Pressure = double.Parse(input[7]);
+                int tire2Age = int.Parse(input[8]);
+                double tire3Pressure = double.Parse(input[9]);
+                int tire3Age = int.Parse(input[10]);
+                double tire4Pressure = double.Parse(input[11]);
+                int tire4Age = int.Parse(input[12]);
 
-                Car car = new Car(model, fuelAmount, fuelConsumptionPerKilometer);
+                var tires = new Tires[4]
+                {
+                    new Tires(tire1Pressure, tire1Age),
+                    new Tires(tire2Pressure, tire2Age),
+                    new Tires(tire3Pressure, tire3Age),
+                    new Tires(tire4Pressure, tire4Age),
+                };
+
+                Engine engine = new Engine(engineSpeed, enginePower);
+                Cargo cargo = new Cargo(cargoType, cargoWeight);
+                Car car = new Car(model, engine, cargo, tires);
 
                 cars.Add(car);
-
             }
 
-            string[] commands = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            string command = Console.ReadLine();
 
-            while (commands[0] != "End")
+            if (command == "fragile")
             {
-                string model = commands[1];
-                double amountOfKilometers = double.Parse(commands[2]);
-
-                Car car = cars.Find(x => x.Model == model);
-
-                if (car.CanMove(amountOfKilometers))
+                foreach (var car in cars)
                 {
-                    car.Move(amountOfKilometers);
+                    foreach (var tire in car.Tires)
+                    {
+                        if (car.Cargo.Type == command && tire.Pressure < 1)
+                        {
+                            Console.WriteLine($"{car.Model}");
+                            return;
+                        }
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Insufficient fuel for the drive");
-                }
-
-                commands = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
             }
-
-            foreach (var car in cars)
+            else if (command == "flammable")
             {
-                Console.WriteLine($"{car.Model} {car.FuelAmount:f2} {car.TravelledDistance}");
+                foreach (var car in cars)
+                {
+                    if (car.Cargo.Type == command && car.Engine.Power > 250)
+                    {
+                        Console.WriteLine($"{car.Model}");
+                    }
+                }
             }
         }
     }

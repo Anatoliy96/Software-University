@@ -8,58 +8,17 @@ namespace DefiningClasses
 {
     public class Car
     {
-        public Car()
-        {
-            travelledDistance = 0;
-        }
-
-        public Car(string model, double fuelAmount, double fuelConsumptionPerKilometer) : this()
+        public Car(string model, Engine engine, Cargo cargo, Tires[] tires)
         {
             Model = model;
-            FuelAmount = fuelAmount;
-            FuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
+            Engine = engine;
+            Cargo = cargo;
+            Tires = tires;
         }
 
-        private string model;
-        private double fuelAmount;
-        private double fuelConsumptionPerKilometer;
-        private double travelledDistance;
-
-        public string Model
-        {
-            get { return model; }
-            set { model = value; }
-        }
-
-        public double FuelAmount
-        {
-            get { return fuelAmount; }
-            set { fuelAmount = value; }
-        }
-
-        public double FuelConsumptionPerKilometer
-        {
-            get { return fuelConsumptionPerKilometer; }
-            set { fuelConsumptionPerKilometer = value; }
-        }
-        
-        public double TravelledDistance
-        {
-            get { return travelledDistance; }
-            set { travelledDistance = value; }
-        }
-
-        public bool CanMove(double distance)
-        {
-            double fuelNeeded = fuelConsumptionPerKilometer * distance;
-            return fuelAmount >= fuelNeeded;
-        }
-
-        public void Move(double distance)
-        {
-            double fuelNeeded = distance * FuelConsumptionPerKilometer;
-            FuelAmount -= fuelNeeded;
-            TravelledDistance += distance;
-        }
+        public string Model { get; set; }
+        public Engine Engine { get; set; }
+        public Cargo Cargo { get; set; }
+        public Tires[] Tires { get; set; }
     }
 }
