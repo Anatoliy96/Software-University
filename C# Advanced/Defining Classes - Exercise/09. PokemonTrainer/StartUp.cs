@@ -2,49 +2,50 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PokemonTrainer;
-
-    public class Startup
+namespace DefiningClasses
 {
-    static void Main(string[] args)
+    public class Startup
     {
-        List<Trainer> trainers = new List<Trainer>();
-
-        string[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
-        while (input[0] != "Tournament")
+        static void Main(string[] args)
         {
-            Trainer trainer = trainers.SingleOrDefault(t => t.Name == input[0]);
+            List<Trainer> trainers = new List<Trainer>();
 
-            if (trainer == null)
+            string[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            while (input[0] != "Tournament")
             {
-                trainer = new Trainer(input[0]);
-                trainer.Pokemons.Add(new(input[1], input[2], int.Parse(input[3])));
-                trainers.Add(trainer);
+                Trainer trainer = trainers.SingleOrDefault(t => t.Name == input[0]);
+
+                if (trainer == null)
+                {
+                    trainer = new Trainer(input[0]);
+                    trainer.Pokemons.Add(new(input[1], input[2], int.Parse(input[3])));
+                    trainers.Add(trainer);
+                }
+                else
+                {
+                    trainer.Pokemons.Add(new(input[1], input[2], int.Parse(input[3])));
+                }
+
+                input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
             }
-            else
+
+            string secondInput = Console.ReadLine();
+
+            while (secondInput != "End")
             {
-                trainer.Pokemons.Add(new(input[1], input[2], int.Parse(input[3])));
+                foreach (var trainer in trainers)
+                {
+                    trainer.CheckPokemon(secondInput);
+                }
+                secondInput = Console.ReadLine();
             }
 
-            input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        }
-
-        string secondInput = Console.ReadLine();
-
-        while (secondInput != "End")
-        {
-            foreach (var trainer in trainers)
+            foreach (var trainer in trainers.OrderByDescending(b => b.NumberOfBadges))
             {
-                trainer.CheckPokemon(secondInput);
+                Console.WriteLine($"{trainer.Name} {trainer.NumberOfBadges} {trainer.Pokemons.Count}");
             }
-            secondInput = Console.ReadLine();
-        }
-
-        foreach (var trainer in trainers.OrderByDescending(b => b.NumberOfBadges))
-        {
-            Console.WriteLine($"{trainer.Name} {trainer.NumberOfBadges} {trainer.Pokemons.Count}");
         }
     }
-}
 
+}

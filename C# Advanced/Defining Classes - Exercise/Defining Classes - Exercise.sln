@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefiningClasses", "DefiningClasses\DefiningClasses.csproj", "{4BAE580B-3779-40BB-BB44-B6CC8DBA14B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09. PokemonTrainer", "09. PokemonTrainer\09. PokemonTrainer.csproj", "{35A9B90B-240D-4B8C-86F0-D0DC83FA2F0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokemonTrainer", "09. PokemonTrainer\PokemonTrainer.csproj", "{35A9B90B-240D-4B8C-86F0-D0DC83FA2F0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftUniParking", "SoftUniParking\SoftUniParking.csproj", "{34ACA560-B755-4AD8-93AC-85CD3A3A38B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftUniParking", "SoftUniParking\SoftUniParking.csproj", "{34ACA560-B755-4AD8-93AC-85CD3A3A38B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

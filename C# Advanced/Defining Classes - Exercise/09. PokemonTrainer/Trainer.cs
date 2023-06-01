@@ -4,40 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokemonTrainer;
-
-public class Trainer
+namespace DefiningClasses
 {
-    public Trainer(string name)
+    public class Trainer
     {
-        Name = name;
-        Pokemons = new List<Pokemon>();
-    }
-
-    public string Name { get; set; }
-    public int NumberOfBadges { get; set; }
-    public List<Pokemon> Pokemons { get; set; }
-
-    public void CheckPokemon(string element)
-    {
-        if (Pokemons.Any(e => e.Element == element))
+        public Trainer(string name)
         {
-            NumberOfBadges++;
+            Name = name;
+            Pokemons = new List<Pokemon>();
         }
-        else
+
+        public string Name { get; set; }
+        public int NumberOfBadges { get; set; }
+        public List<Pokemon> Pokemons { get; set; }
+
+        public void CheckPokemon(string element)
         {
-            for (int i = 0; i < Pokemons.Count; i++)
+            if (Pokemons.Any(e => e.Element == element))
             {
-                Pokemon currentPokemon = Pokemons[i];
-
-                currentPokemon.Health -= 10;
-
-                if (currentPokemon.Health <= 0)
+                NumberOfBadges++;
+            }
+            else
+            {
+                for (int i = 0; i < Pokemons.Count; i++)
                 {
-                    Pokemons.Remove(currentPokemon);
+                    Pokemon currentPokemon = Pokemons[i];
+
+                    currentPokemon.Health -= 10;
+
+                    if (currentPokemon.Health <= 0)
+                    {
+                        Pokemons.Remove(currentPokemon);
+                    }
                 }
             }
         }
     }
 }
-

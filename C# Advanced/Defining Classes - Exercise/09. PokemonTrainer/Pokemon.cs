@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokemonTrainer;
-
-    public class Pokemon
+namespace DefiningClasses
 {
-    public Pokemon(string name, string element, int health)
+    public class Pokemon
     {
-        Name = name;
-        Element = element;
-        Health = health;
+        public Pokemon(string name, string element, int health)
+        {
+            Name = name;
+            Element = element;
+            Health = health;
+        }
+
+        public string Name { get; set; }
+        public string Element { get; set; }
+        public int Health { get; set; }
     }
-
-    public string Name { get; set; }
-    public string Element { get; set; }
-    public int Health { get; set; }
 }
-
