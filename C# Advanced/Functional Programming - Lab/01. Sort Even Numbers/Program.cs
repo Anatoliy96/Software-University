@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int[] numbers = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries)
+    .Select(int.Parse)
+    .Where(n => n % 2 == 0)
+    .OrderBy(n => n).ToArray();
+
+Console.WriteLine(String.Join(", ", numbers));
