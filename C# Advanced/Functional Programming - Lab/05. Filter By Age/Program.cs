@@ -25,10 +25,10 @@ foreach (var people in persons)
 {
     printer(people);
 }
-            
-        }
 
-        static Action<Person> CreatePrinter(string printValue)
+
+
+static Action<Person> CreatePrinter(string printValue)
 {
     if (printValue == "name age")
     {
