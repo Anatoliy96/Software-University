@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace ListyIterator
 {
-    public class ListyIterator<T>
+    public class ListyIterator<T> : IEnumerator<T>
     {
         private List<T> list;
         private int index;
+
+        public T Current => this.list[index];
+
+        object IEnumerator.Current => Current;
 
         public ListyIterator()
         {
@@ -40,6 +44,22 @@ namespace ListyIterator
             return index < list.Count - 1;
         }
 
+        public void PrintAll()
+        {
+            if (list.Count == 0)
+            {
+                Console.WriteLine("Invalid Operation!");
+            }
+            else
+            {
+                foreach (var item in list)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+            }
+            
+        }
         public void Print()
         {
             if (list.Count == 0)
@@ -50,6 +70,21 @@ namespace ListyIterator
             {
                 Console.WriteLine(list[index]);
             }
+        }
+
+        public bool MoveNext()
+        {
+            index++;
+            return index < list.Count;
+        }
+
+        public void Reset()
+        {
+            this.index = -1;
+        }
+
+        public void Dispose()
+        {
             
         }
     }

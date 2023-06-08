@@ -27,6 +27,10 @@
                 {
                     listyInterator.Print();
                 }
+                else if (commands[0] == "PrintAll")
+                {
+                    listyInterator.PrintAll();
+                }
                 else if (commands[0] == "HasNext")
                 {
                     bool result = listyInterator.HasNext();
