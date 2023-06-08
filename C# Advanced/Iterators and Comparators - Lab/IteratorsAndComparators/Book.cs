@@ -19,6 +19,8 @@ namespace IteratorsAndComparators
         public int Year { get; set; }
         public List<string> Authors { get; set; }
 
+       
+
         public int CompareTo(Book other)
         {
             int result = Year.CompareTo(other.Year);
