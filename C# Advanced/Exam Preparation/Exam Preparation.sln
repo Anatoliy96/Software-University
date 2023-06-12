@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Rubber Duck Debugers", "01. Rubber Duck Debugers\01. Rubber Duck Debugers.csproj", "{3D815D31-492D-4B85-9A62-A3BCCA614BDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. The Squirrel", "02. The Squirrel\02. The Squirrel.csproj", "{EB14CF23-E7E8-4EFD-BA29-510004697F7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. The Squirrel", "02. The Squirrel\02. The Squirrel.csproj", "{EB14CF23-E7E8-4EFD-BA29-510004697F7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Apocalypse Preparation", "03. Apocalypse Preparation\03. Apocalypse Preparation.csproj", "{E954641D-5E5E-4FEE-B18A-F48F79ABEABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EB14CF23-E7E8-4EFD-BA29-510004697F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB14CF23-E7E8-4EFD-BA29-510004697F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB14CF23-E7E8-4EFD-BA29-510004697F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E954641D-5E5E-4FEE-B18A-F48F79ABEABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E954641D-5E5E-4FEE-B18A-F48F79ABEABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E954641D-5E5E-4FEE-B18A-F48F79ABEABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E954641D-5E5E-4FEE-B18A-F48F79ABEABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
