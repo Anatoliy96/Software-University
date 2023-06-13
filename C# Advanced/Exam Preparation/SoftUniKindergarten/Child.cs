@@ -25,7 +25,7 @@ namespace SoftUniKindergarten
             sb.Append($"Child: {FirstName} ");
             sb.Append($"{LastName}, ");
             sb.Append($"Age: {Age}, ");
-            sb.Append($"Contact info:{ParentName}- ");
+            sb.Append($"Contact info: {ParentName} - ");
             sb.Append($"{ContactNumber}");
             
             return sb.ToString();

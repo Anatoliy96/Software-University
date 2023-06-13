@@ -13,7 +13,7 @@ namespace SoftUniKindergarten
             Child childFour = new Child("Ruzha", "Ignatova", 6, "Veska Ignatova", "+49 30 901820");
             Child childFive = new Child("Greta", "Thinberg", 3, "Allen White", "541-754-3010");
             Child childSix = new Child("T", "Rex", 2, "Steven Spielberg", "63 001 09 93");
-            Child childSeven = new Child("S", "Rex", 2, " Steven Spielberg ", "63 001 09 93");
+            Child childSeven = new Child("S", "Rex", 2, "Steven Spielberg", "63 001 09 93");
             Child childEight = new Child("Greta", "Thunberg", 3, "Pablo Gaviria", "0888 888 888");
             Child childNine = new Child("Tim", "Duncan", 6, "William Duncan", "(555) 555-1234");
             Console.WriteLine(kindergarten.AddChild(childOne));
