@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftUniKindergarten", "Soft
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Climb The Peaks", "04. Climb The Peaks\04. Climb The Peaks.csproj", "{82E18903-C4B9-4C03-B770-B72F66FBA26B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Navy Battle", "05. Navy Battle\05. Navy Battle.csproj", "{893161B2-4C7E-4F21-8930-E868009302CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{82E18903-C4B9-4C03-B770-B72F66FBA26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82E18903-C4B9-4C03-B770-B72F66FBA26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82E18903-C4B9-4C03-B770-B72F66FBA26B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893161B2-4C7E-4F21-8930-E868009302CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893161B2-4C7E-4F21-8930-E868009302CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893161B2-4C7E-4F21-8930-E868009302CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893161B2-4C7E-4F21-8930-E868009302CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
