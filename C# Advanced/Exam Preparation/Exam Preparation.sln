@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Rubber Duck Debugers", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. The Squirrel", "02. The Squirrel\02. The Squirrel.csproj", "{EB14CF23-E7E8-4EFD-BA29-510004697F7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Apocalypse Preparation", "03. Apocalypse Preparation\03. Apocalypse Preparation.csproj", "{E954641D-5E5E-4FEE-B18A-F48F79ABEABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Apocalypse Preparation", "03. Apocalypse Preparation\03. Apocalypse Preparation.csproj", "{E954641D-5E5E-4FEE-B18A-F48F79ABEABC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Blind Man's Buff", "02. Blind Man's Buff\02. Blind Man's Buff.csproj", "{A4B1FFDE-CE1B-4E71-8FEE-2054405256B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Blind Man's Buff", "02. Blind Man's Buff\02. Blind Man's Buff.csproj", "{A4B1FFDE-CE1B-4E71-8FEE-2054405256B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftUniKindergarten", "SoftUniKindergarten\SoftUniKindergarten.csproj", "{6EB95302-13EA-40EA-9FD0-18FC0A8DDFE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftUniKindergarten", "SoftUniKindergarten\SoftUniKindergarten.csproj", "{6EB95302-13EA-40EA-9FD0-18FC0A8DDFE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Climb The Peaks", "04. Climb The Peaks\04. Climb The Peaks.csproj", "{82E18903-C4B9-4C03-B770-B72F66FBA26B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6EB95302-13EA-40EA-9FD0-18FC0A8DDFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EB95302-13EA-40EA-9FD0-18FC0A8DDFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EB95302-13EA-40EA-9FD0-18FC0A8DDFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82E18903-C4B9-4C03-B770-B72F66FBA26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E18903-C4B9-4C03-B770-B72F66FBA26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E18903-C4B9-4C03-B770-B72F66FBA26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E18903-C4B9-4C03-B770-B72F66FBA26B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
