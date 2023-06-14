@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace SoftUniKindergarten
 {
@@ -28,41 +30,40 @@ namespace SoftUniKindergarten
 
         public bool RemoveChild(string childFullName)
         {
-            Child child = Registry.FirstOrDefault(c => c.FirstName + " " + c.LastName == childFullName);
+            Child child = GetChild(childFullName);
 
-            if (child != null)
-            {
-                Registry.Remove(child);
-                return true;
-            }
+            bool isRemoved = Registry.Remove(child);
 
-            return false;
+            return isRemoved;
         }
 
         public int ChildrenCount()
         {
             return Registry.Count;
         }
-
+        
         public Child GetChild(string childFullName)
         {
-            Child child = Registry.FirstOrDefault(c => c.FirstName + " " + c.LastName == childFullName);
-
-            if (child != null)
-            {
-                return child;
-            }
-            
-            return null;
+            return Registry.Find(c => childFullName == $"{c.FirstName} {c.LastName}");
         }
 
         public string RegistryReport()
         {
-            var orderedChildren = Registry.OrderByDescending(c => c.Age).ThenBy(c => c.LastName).ThenBy(c => c.FirstName).ToList();
+            IEnumerable<Child> orderedChildren = Registry
+            .OrderByDescending(c => c.Age)
+            .ThenBy(c => c.LastName)
+            .ThenBy(c => c.FirstName);
 
-            string report = $"Registered children in {Name}:\n";
-            report += string.Join("\n", orderedChildren);
-            return report;
+            StringBuilder sb = new();
+
+            sb.AppendLine($"Registered children in {Name}:");
+
+            foreach (Child child in orderedChildren)
+            {
+                sb.AppendLine(child.ToString());
+            }
+
+            return sb.ToString().TrimEnd();
         }
     }
 }

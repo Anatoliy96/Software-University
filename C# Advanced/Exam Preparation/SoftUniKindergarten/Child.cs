@@ -21,14 +21,7 @@ namespace SoftUniKindergarten
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append($"Child: {FirstName} ");
-            sb.Append($"{LastName}, ");
-            sb.Append($"Age: {Age}, ");
-            sb.Append($"Contact info: {ParentName} - ");
-            sb.Append($"{ContactNumber}");
-            
-            return sb.ToString();
+            return $"Child: {FirstName} {LastName}, Age: {Age}, Contact info: {ParentName} - {ContactNumber}";
         }
     }
 }
