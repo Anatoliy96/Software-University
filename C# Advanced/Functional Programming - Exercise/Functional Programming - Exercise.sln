@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Predicate For Names", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. List Of Predicates", "08. List Of Predicates\08. List Of Predicates.csproj", "{372212AF-A66F-44D5-AE19-E5D936FC4844}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. Predicate Party!", "09. Predicate Party!\09. Predicate Party!.csproj", "{D4CBCA2C-15F1-48F2-9548-D188698DA41B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{372212AF-A66F-44D5-AE19-E5D936FC4844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{372212AF-A66F-44D5-AE19-E5D936FC4844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{372212AF-A66F-44D5-AE19-E5D936FC4844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4CBCA2C-15F1-48F2-9548-D188698DA41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4CBCA2C-15F1-48F2-9548-D188698DA41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4CBCA2C-15F1-48F2-9548-D188698DA41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4CBCA2C-15F1-48F2-9548-D188698DA41B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
