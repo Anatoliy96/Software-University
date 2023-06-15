@@ -1,18 +1,42 @@
-﻿List<string> people = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).ToList();
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-string[] command = Console.ReadLine().Split(";", StringSplitOptions.RemoveEmptyEntries);
+Dictionary<string, Predicate<string>> filters = new();
 
-while (command[0] != "Print")
+List<string> people = Console.ReadLine()
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+    .ToList();
+
+string command;
+while ((command = Console.ReadLine()) != "Print")
 {
-    string action = command[0];
-    string filter = command[1];
-    string value = command[2];
+    string[] tokens = command.Split(";", StringSplitOptions.RemoveEmptyEntries);
 
-    command = Console.ReadLine().Split(";", StringSplitOptions.RemoveEmptyEntries);
+    string action = tokens[0];
+    string filter = tokens[1];
+    string value = tokens[2];
+
+    if (action == "Add filter")
+    {
+        if (!filters.ContainsKey(filter + value))
+        {
+            filters.Add(filter + value, GetPredicate(filter, value));
+        }
+    }
+    else
+    {
+        filters.Remove(filter + value);
+    }
 }
 
+foreach (var filter in filters)
+{
+    people.RemoveAll(filter.Value);
+}
 
-Console.WriteLine($"{string.Join(" ", people)}");
+Console.WriteLine(string.Join(" ", people));
+
 
 static Predicate<string> GetPredicate(string filter, string value)
 {
@@ -28,6 +52,5 @@ static Predicate<string> GetPredicate(string filter, string value)
             return p => p.Contains(value);
         default:
             return default;
-
     }
 }
