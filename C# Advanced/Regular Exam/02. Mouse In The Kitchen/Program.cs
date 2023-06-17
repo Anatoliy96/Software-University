@@ -69,6 +69,7 @@ while (command != "danger")
         }
         else
         {
+            colStartPosition = colStartPosition - 1;
             Console.WriteLine("No more cheese for tonight!");
             break;
         }
@@ -110,6 +111,7 @@ while (command != "danger")
         }
         else
         {
+            colStartPosition = colStartPosition + 1;
             Console.WriteLine("No more cheese for tonight!");
             break;
         }
@@ -151,6 +153,7 @@ while (command != "danger")
         }
         else
         {
+            rowStartPosition = rowStartPosition - 1;
             Console.WriteLine("No more cheese for tonight!");
             break;
         }
@@ -173,6 +176,7 @@ while (command != "danger")
 
                 countOfCheese--;
                 rowStartPosition = rowStartPosition + 1;
+
             }
             else if (matrix[rowStartPosition + 1, colStartPosition] == 'T')
             {
@@ -192,6 +196,7 @@ while (command != "danger")
         }
         else
         {
+            rowStartPosition = rowStartPosition + 1;
             Console.WriteLine("No more cheese for tonight!");
             break;
         }
@@ -200,6 +205,7 @@ while (command != "danger")
     if (countOfCheese == 0)
     {
         Console.WriteLine("Happy mouse! All the cheese is eaten, good night!");
+        break;
     }
 
     command = Console.ReadLine();
