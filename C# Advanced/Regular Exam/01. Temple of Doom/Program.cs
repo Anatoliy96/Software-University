@@ -9,39 +9,27 @@ while (challenges.Count > 0)
 {
     int result = tools.Peek() * substances.Peek();
 
-
     if (challenges.Contains(result))
     {
         tools.Dequeue();
         substances.Pop();
 
         int index = challenges.IndexOf(result);
-        //for (int i = 0; i < challenges.Count; i++)
-        //{
-        //    if (result == challenges[i])
-        //    {
-        //        challenges.Remove(challenges[i]);
-        //    }
-        //}
         challenges.RemoveAt(index);
     }
-
     else
     {
         tools.Enqueue(tools.Dequeue() + 1);
+        substances.Push(substances.Pop() - 1);
 
-        if (substances.Count > 0)
+        if (substances.Peek() == 0)
         {
-            substances.Push(substances.Pop() - 1);
+            substances.Pop();
         }
+
     }
 
-    if (substances.Peek() == 0)
-    {
-        substances.Pop();
-    }
-
-    if (substances.Count == 0 || tools.Count == 0 && challenges.Count > 0)
+    if (substances.Count == 0 && challenges.Count > 0)
     {
         Console.WriteLine("Harry is lost in the temple. Oblivion awaits him.");
         break;

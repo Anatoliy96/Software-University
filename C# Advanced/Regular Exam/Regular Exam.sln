@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Temple of Doom", "01. Temple of Doom\01. Temple of Doom.csproj", "{6E56EDF5-F29C-4913-A238-E53EBE7A4D86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Mouse In The Kitchen", "02. Mouse In The Kitchen\02. Mouse In The Kitchen.csproj", "{F9317A4A-76B9-4B55-A073-16A918206781}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6E56EDF5-F29C-4913-A238-E53EBE7A4D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E56EDF5-F29C-4913-A238-E53EBE7A4D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E56EDF5-F29C-4913-A238-E53EBE7A4D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9317A4A-76B9-4B55-A073-16A918206781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9317A4A-76B9-4B55-A073-16A918206781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9317A4A-76B9-4B55-A073-16A918206781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9317A4A-76B9-4B55-A073-16A918206781}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
