@@ -11,5 +11,18 @@ namespace Person
         public Child(string name, int age) : base(name, age)
         {
         }
+
+        public new int Age
+        {
+            get { return base.Age; }
+            set
+            {
+                if (value > 15)
+                {
+                    throw new ArgumentException("Child's age cannot be greater than 15.");
+                }
+                base.Age = value;
+            }
+        }
     }
 }

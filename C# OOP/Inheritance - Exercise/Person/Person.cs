@@ -18,7 +18,18 @@ namespace Person
         }
 
         public string Name { get; set; }
-        public int Age { get; set; }
+        public int Age 
+        {
+            get { return age; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Age cannot be negative.");
+                }
+                age = value;
+            }
+        }
 
         public override string ToString()
         {
