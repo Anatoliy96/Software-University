@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class Fish : MainDish
+    public class Tea : HotBeverage
     {
-        private const double FishGramns = 22;
-
-        public Fish(string name, decimal price) : base(name, price, FishGramns)
+        public Tea(string name, decimal price, double milliliters) : base(name, price, milliliters)
         {
         }
     }
