@@ -6,6 +6,7 @@
         {
             int n = int.Parse(Console.ReadLine());
             var persons = new List<Person>();
+            Team team = new Team("SoftUni");
 
             for (int i = 0; i < n; i++)
             {
@@ -18,6 +19,8 @@
                                             decimal.Parse(cmdArgs[3]));
 
                     persons.Add(person);
+
+
                 }
                 catch (Exception ex)
                 {
@@ -25,9 +28,14 @@
                 }
             }
 
-            var parcentage = decimal.Parse(Console.ReadLine());
-            persons.ForEach(p => p.IncreaseSalary(parcentage));
-            persons.ForEach(p => Console.WriteLine(p.ToString()));
+
+            foreach (Person person in persons)
+            {
+                team.AddPlayer(person);
+            }
+
+            Console.WriteLine($"First team has {team.FirstTeam.Count} players.");
+            Console.WriteLine($"Reserve team has {team.ReserveTeam.Count} players.");
         }
     }
 }
