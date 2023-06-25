@@ -28,7 +28,11 @@ namespace PersonsInfo
                 return firstName;
             } 
             private set 
-            { 
+            {
+                if (value != null && value.Length < 3)
+                {
+                    throw new ArgumentException("First name cannot contain fewer than 3 symbols!");
+                }
                 firstName = value; 
             } 
         }
@@ -40,6 +44,11 @@ namespace PersonsInfo
             }
             private set
             {
+                if (value != null && value.Length < 3)
+                {
+                    throw new ArgumentException("Last name cannot contain fewer than 3 symbols!");
+                }
+
                 lastName = value;
             }
         }
@@ -51,6 +60,11 @@ namespace PersonsInfo
             }
             private set
             {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Age cannot be zero or a negative integer!");
+                }
+
                 age = value;
             }
         }
@@ -60,8 +74,12 @@ namespace PersonsInfo
             {
                 return salary;
             }
-            set 
+            private set 
             { 
+                if (value < 650)
+                {
+                    throw new ArgumentException("Salary cannot be less than 650 leva!");
+                }
                 salary = value;
             }
         }
