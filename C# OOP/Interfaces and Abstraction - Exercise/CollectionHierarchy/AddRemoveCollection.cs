@@ -9,7 +9,7 @@ namespace CollectionHierarchy
     public class AddRemoveCollection : IAddRemoveCollection
     {
         private const int addIndex = 0;
-        private List<string> myList;
+        private readonly List<string> myList;
 
         public AddRemoveCollection()
         {

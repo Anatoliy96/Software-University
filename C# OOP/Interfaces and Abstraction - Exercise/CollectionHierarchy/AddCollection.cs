@@ -8,7 +8,7 @@ namespace CollectionHierarchy
 {
     public class AddCollection : IAddCollection
     {
-        private List<string> myList;
+        private readonly List<string> myList;
 
         public AddCollection()
         {
