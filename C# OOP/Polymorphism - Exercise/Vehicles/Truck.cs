@@ -8,7 +8,7 @@ namespace Vehicles
 {
     public class Truck : Drive
     {
-        public Truck(double fuelQuantity, double fuelConsumptionPerKilometer) : base(fuelQuantity, fuelConsumptionPerKilometer)
+        public Truck(double fuelQuantity, double fuelConsumptionPerKilometer, double tankCapacity) : base(fuelQuantity, fuelConsumptionPerKilometer, tankCapacity)
         {
         }
 
@@ -25,12 +25,17 @@ namespace Vehicles
             return $"{this.GetType().Name} needs refueling";
         }
 
-        public override double Refuel(double liters)
+        public override void Refuel(double liters)
         {
-            double refueledAmount = liters * (1 - 0.05);
-            FuelQuantity += refueledAmount;
+            FuelQuantity += liters;
 
-            return FuelQuantity;
+            if (FuelQuantity > TankCapacity)
+            {
+                FuelQuantity -= liters;
+                throw new ArgumentException($"Cannot fit {liters} fuel in the tank");
+            }
+
+            base.Refuel(liters * 0.95);
         }
     }
 }

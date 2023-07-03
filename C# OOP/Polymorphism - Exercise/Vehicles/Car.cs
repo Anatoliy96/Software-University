@@ -8,7 +8,7 @@ namespace Vehicles
 {
     public class Car : Drive
     {
-        public Car(double fuelQuantity, double fuelConsumptionPerKilometer) : base(fuelQuantity, fuelConsumptionPerKilometer)
+        public Car(double fuelQuantity, double fuelConsumptionPerKilometer, double tankCapacity) : base(fuelQuantity, fuelConsumptionPerKilometer, tankCapacity)
         {
         }
 
@@ -25,9 +25,22 @@ namespace Vehicles
             return $"{this.GetType().Name} needs refueling";
         }
 
-        public override double Refuel(double liters)
-        {
-            return FuelQuantity += liters;
-        }
+        //public override void Refuel(double liters)
+        //{
+        //    if (liters <= 0)
+        //    {
+        //        Console.WriteLine($"Fuel must be a positive number");
+        //    }
+
+        //    FuelQuantity += liters;
+
+        //    if (FuelQuantity > TankCapacity) 
+        //    {
+        //        FuelQuantity -= liters;
+        //        Console.WriteLine($"Cannot fit {FuelQuantity} fuel in the tank");
+        //    }
+
+        //    FuelQuantity += liters;
+        //}
     }
 }
