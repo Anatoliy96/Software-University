@@ -6,7 +6,8 @@
         [Author("George")]
         public static void Main()
         {
-            
+            Tracker tracker = new Tracker();
+            tracker.PrintMethodsByAuthor();
         }
     }
 }
