@@ -1,6 +1,7 @@
 namespace FightingArena.Tests
 {
     using NUnit.Framework;
+    using System;
 
     [TestFixture]
     public class WarriorTests
@@ -24,6 +25,28 @@ namespace FightingArena.Tests
             Assert.AreEqual(expectedName, warrior.Name);
             Assert.AreEqual(expectedDamage, warrior.Damage);
             Assert.AreEqual(expectedHealth, warrior.HP);
+        }
+
+        [Test]
+        public void WarriorNameShouldTrowExepcetionIfItsNullOrEmpty()
+        {
+            Assert.Throws<ArgumentException>(() => warrior = new Warrior(null, 50, 100),
+                "Name should not be empty or whitespace!");
+        }
+
+        [TestCase(0)]
+        [TestCase(-1)]
+        public void WarriorDamageShouldTrowExepcetionIfItsZeroOrNegative(int damage)
+        {
+            Assert.Throws<ArgumentException>(() => warrior = new Warrior("Gosho", damage, 100),
+                "Damage value should be positive!");
+        }
+
+        [Test]
+        public void WarriorHpShouldTrowExepcetionIfItsNegative()
+        {
+            Assert.Throws<ArgumentException>(() => warrior = new Warrior("Gosho", 50, -1),
+                "HP should not be negative!");
         }
     }
 }
