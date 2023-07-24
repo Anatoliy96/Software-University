@@ -99,11 +99,13 @@ namespace Database.Tests
             database.Add(10);
             database.Add(20);
 
+            int expectedResult = 1;
+            
             //Act
             database.Remove();
-
+            int actualResult = database.Count;
             //Assert
-            Assert.AreEqual(20, 20, "Last element shoud be removed");
+            Assert.AreEqual(expectedResult, actualResult, "Last element shoud be removed");
         }
 
         [Test]
