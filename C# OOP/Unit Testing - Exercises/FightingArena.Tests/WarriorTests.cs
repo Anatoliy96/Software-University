@@ -1,6 +1,7 @@
 namespace FightingArena.Tests
 {
     using NUnit.Framework;
+    using NUnit.Framework.Constraints;
     using System;
 
     [TestFixture]
@@ -47,6 +48,23 @@ namespace FightingArena.Tests
         {
             Assert.Throws<ArgumentException>(() => warrior = new Warrior("Gosho", 50, -1),
                 "HP should not be negative!");
+        }
+
+        [Test]
+        public void WarriorHpShouldTrowExepcetionIfHisHpIsBelow30()
+        {
+            warrior = new Warrior("Gosho", 50, 20);
+
+            Assert.Throws<InvalidOperationException>(() => warrior.Attack(warrior),
+                "Your HP is too low in order to attack other warriors!");
+        }
+
+        [Test]
+        public void WarriorHpShouldTrowExepcetionWhenEnemyHpIsBelow30()
+        {
+            Warrior attackedWarrior = new Warrior("Pesho", 60, 10);
+
+            Assert.Throws<InvalidOperationException>(() => warrior.Attack(attackedWarrior));
         }
     }
 }
