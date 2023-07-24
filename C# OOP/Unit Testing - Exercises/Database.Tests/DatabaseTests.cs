@@ -41,7 +41,7 @@ namespace Database.Tests
         }
 
         [Test]
-        public void TestAddMethodShoudAddElementInNextCall()
+        public void AddMethodShouldIncreaseCount()
         {
             //Arrange
             Database database = new Database(1, 2);
@@ -54,6 +54,23 @@ namespace Database.Tests
 
             //Assert
             Assert.AreEqual(expectedResult, database.Count, "Database shoud add item in the next free cell");
+        }
+
+        [TestCase(new int[] { 1, 2, 3, 4, 5})]
+        public void TestAddMethodShoudAddElementInNextCall(int[] data)
+        {
+            //Arrange
+            Database database = new Database();
+
+            foreach (int i in data)
+            {
+                database.Add(i);
+            }
+
+            int[] actualResult = database.Fetch();
+
+            //Assert
+            Assert.AreEqual(data, actualResult, "Database shoud add item in the next free cell");
         }
 
         [Test]
