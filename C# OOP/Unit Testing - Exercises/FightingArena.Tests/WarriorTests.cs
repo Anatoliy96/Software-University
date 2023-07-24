@@ -62,9 +62,18 @@ namespace FightingArena.Tests
         [Test]
         public void WarriorHpShouldTrowExepcetionWhenEnemyHpIsBelow30()
         {
-            Warrior attackedWarrior = new Warrior("Pesho", 60, 10);
+            Warrior enemydWarrior = new Warrior("Pesho", 60, 10);
 
-            Assert.Throws<InvalidOperationException>(() => warrior.Attack(attackedWarrior));
+            Assert.Throws<InvalidOperationException>(() => warrior.Attack(enemydWarrior));
+        }
+
+        [Test]
+        public void WarriorShouldTrowExepcetionWhenEnemyIsStronger()
+        {
+            Warrior attackedWarrior = new Warrior("Veso", 50, 60);
+            Warrior enemydWarrior = new Warrior("Pesho", 80, 100);
+
+            Assert.Throws<InvalidOperationException>(() => attackedWarrior.Attack(enemydWarrior));
         }
     }
 }
