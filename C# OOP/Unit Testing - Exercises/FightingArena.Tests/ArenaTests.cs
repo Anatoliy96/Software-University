@@ -5,6 +5,6 @@
     [TestFixture]
     public class ArenaTests
     {
-
+        
     }
 }
