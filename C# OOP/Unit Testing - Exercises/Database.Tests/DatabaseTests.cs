@@ -118,14 +118,15 @@ namespace Database.Tests
             Assert.Throws<InvalidOperationException>(() => database.Remove());
         }
 
-        //[Test]
-        //public void TestConstructorTakesOnlyIntegers()
-        //{
-        //    //Arrange & Act
-        //    int[] values = new int[] { 10, 20, 30, 40 };
-        //    Database database = new Database(values);
+        [TestCase(new int[] { 1, 2, 3})]
 
-            
-        //}
+        public void FetchMehodShouldReturnElementsOfTheArrayAsResult(int[] data)
+        {
+            var database = new Database(data);
+
+            int[] acturalResult = database.Fetch();
+
+            Assert.AreEqual(data, acturalResult);
+        }
     }
 }
