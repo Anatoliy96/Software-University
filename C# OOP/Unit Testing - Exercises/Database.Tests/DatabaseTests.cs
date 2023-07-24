@@ -25,10 +25,11 @@ namespace Database.Tests
         public void TestIfTheArrayLenghtIsBigger()
         {
             //Arrange
-            Database database = new Database();
             int number = 15;
 
             //Act
+            Database database = new Database();
+
             for (int i = 0; i < 16; i++)
             {
                 database.Add(number);
@@ -43,15 +44,16 @@ namespace Database.Tests
         public void TestAddMethodShoudAddElementInNextCall()
         {
             //Arrange
-            Database database = new Database();
+            Database database = new Database(1, 2);
+
+            int expectedResult = 3;
             int number = 20;
-            int expectedNumber = 20;
 
             //Act
             database.Add(number);
 
             //Assert
-            Assert.AreEqual(number, expectedNumber, "Database shoud add item in the next free cell");
+            Assert.AreEqual(expectedResult, database.Count, "Database shoud add item in the next free cell");
         }
 
         [Test]
@@ -97,14 +99,14 @@ namespace Database.Tests
             Assert.Throws<InvalidOperationException>(() => database.Remove());
         }
 
-        [Test]
-        public void TestConstructorTakesOnlyIntegers()
-        {
-            //Arrange & Act
-            int[] values = new int[] { 10, 20, 30, 40 };
-            Database database = new Database(values);
+        //[Test]
+        //public void TestConstructorTakesOnlyIntegers()
+        //{
+        //    //Arrange & Act
+        //    int[] values = new int[] { 10, 20, 30, 40 };
+        //    Database database = new Database(values);
 
-            Assert.That(values, database.GetType().IsValueType, "values shoud be integers");
-        }
+            
+        //}
     }
 }
