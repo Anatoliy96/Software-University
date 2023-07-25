@@ -1,6 +1,7 @@
 ﻿namespace FightingArena.Tests
 {
     using NUnit.Framework;
+    using System;
     using System.Linq;
 
     [TestFixture]
@@ -40,6 +41,15 @@
 
             Assert.IsNotEmpty(arena.Warriors);
             Assert.AreEqual(warrior, arena.Warriors.Single());
+        }
+
+        [Test]
+        public void ArenaEnrollShouldThrowExeptionIfTwoWarriorsIsWithSameName()
+        {
+            Warrior warrior = new Warrior("Gosho", 50, 100);
+            arena.Enroll(warrior);
+
+            Assert.Throws<InvalidOperationException>(() => arena.Enroll(warrior));
         }
     }
 }
