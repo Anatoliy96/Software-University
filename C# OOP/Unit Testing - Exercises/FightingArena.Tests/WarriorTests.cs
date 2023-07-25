@@ -75,5 +75,18 @@ namespace FightingArena.Tests
 
             Assert.Throws<InvalidOperationException>(() => attackedWarrior.Attack(enemydWarrior));
         }
+
+        [Test]
+        public void WarriorAttackShouldWorkCorrectly()
+        {
+            Warrior defender = new Warrior("Gosho", 50, 100);
+            Warrior attacker = new Warrior("Pesho", 20, 60);
+
+            int expectedDefenderHp = 80;
+
+            attacker.Attack(defender);
+
+            Assert.AreEqual(expectedDefenderHp, defender.HP);
+        }
     }
 }
