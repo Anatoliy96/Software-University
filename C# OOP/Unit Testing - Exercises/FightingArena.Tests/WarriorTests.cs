@@ -29,10 +29,26 @@ namespace FightingArena.Tests
         }
 
         [Test]
+        public void WarriorNameShouldSetCorrectly()
+        {
+            string expectedWarriorName = "Gosho";
+
+            Assert.AreEqual(expectedWarriorName, warrior.Name);
+        }
+
+        [Test]
         public void WarriorNameShouldTrowExepcetionIfItsNullOrEmpty()
         {
             Assert.Throws<ArgumentException>(() => warrior = new Warrior(null, 50, 100),
                 "Name should not be empty or whitespace!");
+        }
+
+        [Test]
+        public void WarriorDamageShouldSetCorrectly()
+        {
+            int expectedWarriorDamage = 50;
+
+            Assert.AreEqual(expectedWarriorDamage, warrior.Damage);
         }
 
         [TestCase(0)]
@@ -48,6 +64,14 @@ namespace FightingArena.Tests
         {
             Assert.Throws<ArgumentException>(() => warrior = new Warrior("Gosho", 50, -1),
                 "HP should not be negative!");
+        }
+
+        [Test]
+        public void WarriorHpShouldSetCorrectly()
+        {
+            int expectedWarriorHp = 100;
+
+            Assert.AreEqual(expectedWarriorHp, warrior.HP);
         }
 
         [Test]
