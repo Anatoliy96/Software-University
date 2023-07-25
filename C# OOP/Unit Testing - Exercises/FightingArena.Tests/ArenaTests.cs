@@ -1,6 +1,7 @@
 ﻿namespace FightingArena.Tests
 {
     using NUnit.Framework;
+    using System.Linq;
 
     [TestFixture]
     public class ArenaTests
@@ -29,6 +30,16 @@
             arena.Enroll(warrior);
 
             Assert.AreEqual(expectedResult, arena.Count);
+        }
+
+        [Test]
+        public void ArenaEnrollShouldWorkCorrectly()
+        {
+            Warrior warrior = new Warrior("Gosho", 50, 100);
+            arena.Enroll(warrior);
+
+            Assert.IsNotEmpty(arena.Warriors);
+            Assert.AreEqual(warrior, arena.Warriors.Single());
         }
     }
 }
