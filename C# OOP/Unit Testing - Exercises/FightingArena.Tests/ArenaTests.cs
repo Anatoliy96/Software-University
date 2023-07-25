@@ -51,5 +51,23 @@
 
             Assert.Throws<InvalidOperationException>(() => arena.Enroll(warrior));
         }
+
+        [Test]
+        public void ArenaFightShouldWorkCorrectly()
+        {
+            Warrior attacker = new Warrior("Gosho", 50, 100);
+            Warrior defender = new Warrior("Pesho", 20, 60);
+
+            arena.Enroll(attacker);
+            arena.Enroll(defender);
+
+            arena.Fight(attacker.Name, defender.Name);
+
+            int expectedAttackerHp = 80;
+            int expectedDefenderHp = 10;
+
+            Assert.AreEqual(expectedAttackerHp, attacker.HP);
+            Assert.AreEqual(expectedDefenderHp, defender.HP);
+        }
     }
 }
