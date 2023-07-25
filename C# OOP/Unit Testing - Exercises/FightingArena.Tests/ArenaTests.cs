@@ -69,5 +69,16 @@
             Assert.AreEqual(expectedAttackerHp, attacker.HP);
             Assert.AreEqual(expectedDefenderHp, defender.HP);
         }
+
+        [Test]
+        public void ArenaFightShouldThrowExeptionIfHaveMissingName()
+        {
+            Warrior attacker = new Warrior("Gosho", 50, 100);
+            Warrior defender = new Warrior("Pesho", 20, 60);
+
+            arena.Enroll(defender);
+
+            Assert.Throws<InvalidOperationException>(() => arena.Fight(attacker.Name, defender.Name));
+        }
     }
 }
