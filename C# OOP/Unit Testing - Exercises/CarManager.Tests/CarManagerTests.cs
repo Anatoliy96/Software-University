@@ -82,5 +82,12 @@ namespace CarManager.Tests
 
             Assert.AreEqual(expectedModel, car.Model);
         }
+
+        [TestCase("")]
+        [TestCase(null)]
+        public void CarModelSetterShouldThrowExeptionWhenValueIsNull(string model)
+        {
+            Assert.Throws<ArgumentException>(() => new Car("Audi", model, 7, 40));
+        }
     }
 }
