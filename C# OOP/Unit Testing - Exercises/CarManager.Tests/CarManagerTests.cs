@@ -2,6 +2,7 @@ namespace CarManager.Tests
 {
     using NUnit.Framework;
     using System;
+    using System.Reflection;
 
     [TestFixture]
     public class CarManagerTests
@@ -88,6 +89,31 @@ namespace CarManager.Tests
         public void CarModelSetterShouldThrowExeptionWhenValueIsNull(string model)
         {
             Assert.Throws<ArgumentException>(() => new Car("Audi", model, 7, 40));
+        }
+
+        [Test]
+        public void CarFuelConsumptionGetterShouldWorkCorrectly()
+        {
+            double expectedFuelConsumption = 6;
+
+            double actualFuelConsumption = car.FuelConsumption;
+
+            Assert.AreEqual(expectedFuelConsumption, actualFuelConsumption);
+        }
+
+        [Test]
+        public void CarFuelConsumptionSetterShouldWorkCorrectly()
+        {
+            double expectedFuelConsumption = 6;
+
+            Assert.AreEqual(expectedFuelConsumption, car.FuelConsumption);
+        }
+
+        [TestCase(0)]
+        [TestCase(-10)]
+        public void CarFuelConsumptionSetterShouldThrowExeptionWhenValueIsZeroOrEqual(double amount)
+        {
+            Assert.Throws<ArgumentException>(() => new Car("Audi", "A3", amount, 40));
         }
     }
 }
