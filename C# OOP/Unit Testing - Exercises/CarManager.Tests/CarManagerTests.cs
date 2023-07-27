@@ -143,5 +143,28 @@
         {
             Assert.Throws<InvalidOperationException>(() => car.Drive(12), "Fuel amount cannot be negative!");
         }
+
+        [Test]
+        public void CarFuelCapacityGetterShouldWorkCorrectly()
+        {
+            double expectedFuelCapacity = 40;
+
+            Assert.AreEqual(expectedFuelCapacity, car.FuelCapacity);
+        }
+
+        [Test]
+        public void CarFuelCapacitySetterShouldWorkCorrectly()
+        {
+            double expectedFuelCapacity = 40;
+
+            Assert.AreEqual(expectedFuelCapacity, car.FuelCapacity);
+        }
+
+        [TestCase(0)]
+        [TestCase(-10)]
+        public void CarFuelCapacitySetterShouldThrowExeptionWhenValueIsLessThanZeroOrEqual(double amount)
+        {
+            Assert.Throws<ArgumentException>(() => new Car("Audi", "A3", 7, amount));
+        }
     }
 }
