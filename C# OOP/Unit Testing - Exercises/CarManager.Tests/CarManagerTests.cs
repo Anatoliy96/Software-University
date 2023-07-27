@@ -1,6 +1,7 @@
 namespace CarManager.Tests
 {
     using NUnit.Framework;
+    using System;
 
     [TestFixture]
     public class CarManagerTests
@@ -37,6 +38,49 @@ namespace CarManager.Tests
             car = new Car("Audi", "A3", 6, 40);
 
             Assert.AreEqual(expectedFuelAmount, car.FuelAmount);
+        }
+
+        [Test]
+        public void CarMakeGetterShouldWorkCorrectly()
+        {
+            string expectedMake = "Audi";
+
+            string actualMake = car.Make;
+
+            Assert.AreEqual(expectedMake, actualMake);
+        }
+
+        [Test]
+        public void CarMakeSetterShouldWorkCorrectly()
+        {
+            string expectedMake = "Audi";
+
+            Assert.AreEqual(expectedMake, car.Make);
+        }
+
+        [TestCase("")]
+        [TestCase(null)]
+        public void CarMakeSetterShouldThrowExeptionWhenValueIsNull(string make)
+        {
+            Assert.Throws<ArgumentException>(() => new Car(make, "Audi", 7, 40));
+        }
+
+        [Test]
+        public void CarModelGetterShouldWorkCorrectly()
+        {
+            string expectedModel = "A3";
+
+            string actualModel = car.Model;
+
+            Assert.AreEqual(expectedModel, actualModel);
+        }
+
+        [Test]
+        public void CarModelSetterShouldWorkCorrectly()
+        {
+            string expectedModel = "A3";
+
+            Assert.AreEqual(expectedModel, car.Model);
         }
     }
 }
