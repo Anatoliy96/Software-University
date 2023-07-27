@@ -32,9 +32,11 @@ namespace CarManager.Tests
         [Test]
         public void CarBaseConstructorShouldSetCorrectValues()
         {
-            double expectedFuelCapacity = 0;
+            double expectedFuelAmount = 0;
 
-            Assert.AreEqual(expectedFuelCapacity, car.FuelAmount);
+            car = new Car("Audi", "A3", 6, 40);
+
+            Assert.AreEqual(expectedFuelAmount, car.FuelAmount);
         }
     }
 }
