@@ -193,5 +193,22 @@
         {
             Assert.Throws<ArgumentException>(() => car.Refuel(amount));
         }
+
+        [Test]
+        public void CarDriveMethodShouldThrowExeptionWhenFuelNeededIsGreaterThanFuelAmount()
+        {
+            Assert.Throws<InvalidOperationException>(() => car.Drive(50));
+        }
+
+        [Test]
+        public void CarDriveMethodShouldDecreaseFuelAmount()
+        {
+            double expectedAmount = 37;
+
+            car.Refuel(40);
+            car.Drive(50);
+
+            Assert.AreEqual(expectedAmount, car.FuelAmount);
+        }
     }
 }
