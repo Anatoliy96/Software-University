@@ -166,5 +166,32 @@
         {
             Assert.Throws<ArgumentException>(() => new Car("Audi", "A3", 7, amount));
         }
+
+        [Test]
+        public void CarRefuelMethodShouldIncreaseFuelAmount()
+        {
+            double expectedAmount = 30;
+
+            car.Refuel(30);
+
+            Assert.AreEqual(expectedAmount, car.FuelAmount);
+        }
+
+        [Test]
+        public void CarRefuelMethodShouldSetFuelAmountEqualToCapacityIfFuelAmountIsGreaterThanCapacity()
+        {
+            double expectedAmount = 40;
+
+            car.Refuel(50);
+
+            Assert.AreEqual(expectedAmount, car.FuelAmount);
+        }
+
+        [TestCase(0)]
+        [TestCase(-10)]
+        public void CarRefuelMethodShouldThrowExeptionWhenAmountOfFuelIsLessOrEqualToZero(double amount)
+        {
+            Assert.Throws<ArgumentException>(() => car.Refuel(amount));
+        }
     }
 }
