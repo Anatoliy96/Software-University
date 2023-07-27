@@ -1,4 +1,4 @@
-namespace CarManager.Tests
+﻿namespace CarManager.Tests
 {
     using NUnit.Framework;
     using System;
@@ -111,9 +111,37 @@ namespace CarManager.Tests
 
         [TestCase(0)]
         [TestCase(-10)]
-        public void CarFuelConsumptionSetterShouldThrowExeptionWhenValueIsZeroOrEqual(double amount)
+        public void CarFuelConsumptionSetterShouldThrowExeptionWhenValueIsZeroOrLess(double amount)
         {
             Assert.Throws<ArgumentException>(() => new Car("Audi", "A3", amount, 40));
+        }
+
+        [Test]
+        public void CarFuelAmountGetterShouldWorkCorrectly()
+        {
+            double expectedFuelAmount = 30;
+
+            car.Refuel(30);
+
+            double actualFuelAmount = car.FuelAmount;
+
+            Assert.AreEqual(expectedFuelAmount, actualFuelAmount);
+        }
+
+        [Test]
+        public void CarFuelAmountSetterShouldWorkCorrectly()
+        {
+            double expectedFuelAmount = 30;
+
+            car.Refuel(30);
+
+            Assert.AreEqual(expectedFuelAmount, car.FuelAmount);
+        }
+
+        [Test]
+        public void CarFuelÀmountSetterShouldThrowExeptionWhenValueIsLessThan0()
+        {
+            Assert.Throws<InvalidOperationException>(() => car.Drive(12), "Fuel amount cannot be negative!");
         }
     }
 }
