@@ -26,9 +26,7 @@ namespace EDriveRent.Repositories
 
         public IUser FindById(string identifier)
         {
-            var user = users.FirstOrDefault(u => u.DrivingLicenseNumber == identifier);
-
-            return user;
+            return this.users.FirstOrDefault(u => u.DrivingLicenseNumber == identifier);
         }
 
         public IReadOnlyCollection<IUser> GetAll()
@@ -38,7 +36,7 @@ namespace EDriveRent.Repositories
 
         public bool RemoveById(string identifier)
         {
-            var userToRemove = users.FirstOrDefault(u => u.DrivingLicenseNumber == identifier);
+            var userToRemove = users.Find(u => u.DrivingLicenseNumber == identifier);
 
             if (userToRemove != null)
             {

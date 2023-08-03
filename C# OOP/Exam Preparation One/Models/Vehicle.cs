@@ -12,7 +12,10 @@ namespace EDriveRent.Models
         private string brand;
         private string model;
         private string licensePlateNumber;
-        
+        private int batteryLevel;
+        private bool isDamaged;
+        private double maxMileage;
+
         public Vehicle(string brand, string model, double maxMileage, string licensePlateNumber)
         {
             this.Brand = brand;
@@ -48,7 +51,7 @@ namespace EDriveRent.Models
 
             private set
             {
-                if (!string.IsNullOrWhiteSpace(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException("Model cannot be null or whitespace!");
                 }
@@ -57,7 +60,7 @@ namespace EDriveRent.Models
             }
         }
 
-        public double MaxMileage { get; private set; }
+        public double MaxMileage { get => maxMileage; private set => maxMileage = value; }
 
         public string LicensePlateNumber
         {
@@ -73,9 +76,9 @@ namespace EDriveRent.Models
             }
         }
 
-        public int BatteryLevel { get; private set; }
+        public int BatteryLevel { get => batteryLevel; private set => batteryLevel = value; }
 
-        public bool IsDamaged { get; private set; }
+        public bool IsDamaged { get => isDamaged; private set => isDamaged = value; }
 
         public void ChangeStatus()
         {
@@ -91,13 +94,11 @@ namespace EDriveRent.Models
 
         public void Drive(double mileage)
         {
-            double batteryPercentage = Math.Round(mileage - MaxMileage / 100);
+            this.BatteryLevel -= (int)Math.Round(mileage / MaxMileage * 100);
 
-            Type type = typeof(Vehicle).GetType();
-            
-            if (type.Name == "CargoVan") 
+            if (this.GetType() == typeof(CargoVan)) 
             {
-                batteryPercentage -= 0.5;
+                this.BatteryLevel -= 5;
             }
         }
 

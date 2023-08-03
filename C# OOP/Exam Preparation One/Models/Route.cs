@@ -12,6 +12,8 @@ namespace EDriveRent.Models
         private string startPoint;
         private string endPoint;
         private double length;
+        private int routeId;
+        private bool isLocked;
 
         public Route(string startPoint, string endPoint, double length, int routeId)
         {
@@ -65,9 +67,9 @@ namespace EDriveRent.Models
             }
         }
 
-        public int RouteId { get; private set; }
+        public int RouteId { get => routeId; private set => routeId = value; }
 
-        public bool IsLocked { get; private set; }
+        public bool IsLocked { get => isLocked; private set => isLocked = value; }
 
         public void LockRoute()
         {

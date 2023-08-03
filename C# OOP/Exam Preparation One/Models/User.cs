@@ -12,6 +12,7 @@ namespace EDriveRent.Models
         private string firstName;
         private string lastName;
         private string drivingLicenseNumber;
+        private bool isBlocked;
 
         public User(string firstName, string lastName, string drivingLicenseNumber)
         {
@@ -67,7 +68,7 @@ namespace EDriveRent.Models
             }
         }
 
-        public bool IsBlocked { get; private set; }
+        public bool IsBlocked { get => isBlocked; private set => isBlocked = value; }
 
         public void DecreaseRating()
         {
