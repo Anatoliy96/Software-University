@@ -63,12 +63,23 @@ namespace VehicleGarage.Tests
         }
 
         [Test]
-
         public void GarageAddVehicleValidVehicleReturnsTrue()
         {
             var result = garage.AddVehicle(vehicle);
 
             Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void GarageChargeVehiclesReturnsCountOfRepairedVehicles()
+        {
+            int expectedCount = 1;
+
+            garage.AddVehicle(vehicle);
+            garage.DriveVehicle(vehicle.LicensePlateNumber, 50, false);
+            int result = garage.ChargeVehicles(50);
+            
+            Assert.AreEqual(expectedCount, result);
         }
     }
 }
