@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 
 namespace VehicleGarage.Tests
 {
@@ -11,7 +12,7 @@ namespace VehicleGarage.Tests
         public void Setup()
         {
             vehicle = new Vehicle("Audi", "A3", "PB6771TT");
-            garage = new Garage(10);
+            garage = new Garage(2);
         }
 
         [Test]
@@ -40,6 +41,34 @@ namespace VehicleGarage.Tests
 
             Assert.AreEqual(expectedGarageCapacity, garage.Capacity);
             Assert.IsTrue(expectedListOfVehicles == garage.Vehicles.Count);
+        }
+
+        [Test]
+        public void GarageAddVehicleCapacityExceededReturnsFalse()
+        {
+            garage.AddVehicle(vehicle);
+            garage.AddVehicle(new Vehicle("BMW", "M3", "PB5377"));
+            var result = garage.AddVehicle(new Vehicle("Mercedes", "S500", "PB1346"));
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void GarageAddVehicleDuplicateLicensePlateNumberReturnsFalse()
+        {
+            garage.AddVehicle(vehicle);
+            var result = garage.AddVehicle(new Vehicle("BMW", "M3", "PB6771TT"));
+           
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+
+        public void GarageAddVehicleValidVehicleReturnsTrue()
+        {
+            var result = garage.AddVehicle(vehicle);
+
+            Assert.IsTrue(result);
         }
     }
 }
