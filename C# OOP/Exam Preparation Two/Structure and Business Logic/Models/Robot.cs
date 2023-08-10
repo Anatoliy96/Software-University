@@ -53,17 +53,9 @@ namespace RobotService.Models
             }
         }
 
-        public int BatteryLevel 
-        { 
-            get => BatteryLevel; 
-            private set => BatteryLevel = value;
-        }
-
-        public int ConvertionCapacityIndex 
-        { 
-            get => convertionCapacityIndex; 
-            private set => convertionCapacityIndex = value; 
-        }
+        public int BatteryLevel { get; set; }
+       
+        public int ConvertionCapacityIndex { get; set; }
 
 
         public IReadOnlyCollection<int> InterfaceStandards { get => interfaceStandards.AsReadOnly(); }
@@ -105,10 +97,18 @@ namespace RobotService.Models
         {
             StringBuilder sb = new StringBuilder();
             
-            sb.AppendLine($"{this.GetType() == typeof(Robot)} {this.Model}:");
+            sb.AppendLine($"{this.GetType().Name} {this.Model}:");
             sb.AppendLine($"--Maximum battery capacity: {this.BatteryCapacity}");
             sb.AppendLine($"--Current battery level: {this.BatteryLevel}");
-            sb.AppendLine($"--Supplements installed: {(interfaceStandards.Count != 0 ? string.Join(" ", interfaceStandards) : "none")}");
+
+            if (InterfaceStandards.Count == 0)
+            {
+                sb.AppendLine("--Supplements installed: none");
+            }
+            else
+            {
+                sb.AppendLine($"--Supplements installed: {string.Join(" ", interfaceStandards)}");
+            }
 
             return sb.ToString().TrimEnd();
         }
