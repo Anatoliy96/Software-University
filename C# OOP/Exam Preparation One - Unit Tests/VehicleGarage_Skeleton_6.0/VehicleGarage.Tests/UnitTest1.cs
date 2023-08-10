@@ -81,5 +81,33 @@ namespace VehicleGarage.Tests
             
             Assert.AreEqual(expectedCount, result);
         }
+
+        [Test]
+        public void GarageDriveVehicleReduceBatteryLevel()
+        {
+            int expectedOutput = 50;
+            garage.AddVehicle(vehicle);
+            garage.DriveVehicle("PB6771TT", 50, false);
+
+            Assert.AreEqual(expectedOutput, vehicle.BatteryLevel);
+        }
+
+        [Test]
+        public void GarageDriveVehicleAccidentReturnsTrue()
+        {
+            garage.AddVehicle(vehicle);
+            garage.DriveVehicle("PB6771TT", 50, true);
+
+            Assert.IsTrue(vehicle.IsDamaged);
+        }
+
+        [Test]
+        public void GarageDriveVehicleAccidentReturnsTrueTest()
+        {
+            garage.AddVehicle(vehicle);
+            garage.DriveVehicle("PB6771TT", 110, true);
+
+            Assert.IsTrue(vehicle.IsDamaged);
+        }
     }
 }
