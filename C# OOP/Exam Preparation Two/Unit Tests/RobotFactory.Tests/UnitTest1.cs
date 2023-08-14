@@ -110,5 +110,20 @@ namespace RobotFactory.Tests
             Assert.AreEqual(expectedSupplement.Name, actualSupplement.Name);
             Assert.AreEqual(expectedSupplement.InterfaceStandard, actualSupplement.InterfaceStandard);
         }
+
+        [Test]
+        public void UpgradeRobotShouldReturnFalseWhenInterfaceStandartIsDiffrent()
+        {
+            Robot expectedRobot = new Robot("Terminator", 1000, 2045);
+            Supplement expectedSupplement = new Supplement("Laser", 2045);
+           
+
+            _ = factory.UpgradeRobot(expectedRobot, expectedSupplement);
+
+            bool actualResult = factory.UpgradeRobot(expectedRobot, expectedSupplement);
+
+            Assert.IsFalse(actualResult);
+            Assert.AreEqual(1, expectedRobot.Supplements.Count);
+        }
     }
 }
