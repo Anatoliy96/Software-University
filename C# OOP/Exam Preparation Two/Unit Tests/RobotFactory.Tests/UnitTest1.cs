@@ -112,7 +112,7 @@ namespace RobotFactory.Tests
         }
 
         [Test]
-        public void UpgradeRobotShouldReturnFalseWhenInterfaceStandartIsDiffrent()
+        public void UpgradeRobotShouldReturnFalseWhenSupplementIsAlreadyAdded()
         {
             Robot expectedRobot = new Robot("Terminator", 1000, 2045);
             Supplement expectedSupplement = new Supplement("Laser", 2045);
@@ -124,6 +124,17 @@ namespace RobotFactory.Tests
 
             Assert.IsFalse(actualResult);
             Assert.AreEqual(1, expectedRobot.Supplements.Count);
+        }
+
+        public void UpgradeRobotShouldReturnFalseWhenInterfaceStandarsAreDiffrent()
+        {
+            Robot expectedRobot = new Robot("Terminator", 1000, 2045);
+            Supplement expectedSupplement = new Supplement("Laser", 2047);
+
+            bool actualResult = factory.UpgradeRobot(expectedRobot, expectedSupplement);
+
+            Assert.IsFalse(actualResult);
+            Assert.AreEqual(0, expectedRobot.Supplements.Count);
         }
     }
 }
