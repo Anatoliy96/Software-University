@@ -64,17 +64,35 @@ namespace RobotFactory.Tests
             Assert.AreEqual(expectedRobot.InterfaceStandard, actualRobot.InterfaceStandard);
             Assert.AreEqual(expectedMessage, actualMessage);
         }
+
         [Test]
         public void ProduceRobotShouldNotAddRobotToCollectionWhenCapacityLimitIsReached()
         {
             Factory factory = new Factory("Terminators", 1);
-            Robot robot2 = new Robot("Stoqn", 34566, 1223);
-
+            
             string expectedMessage = "The factory is unable to produce more robots for this production day!";
 
             factory.ProduceRobot("Ivan", 13254, 2044);
             string actualMessage = factory.ProduceRobot("Stoqn", 34566, 1223);
 
+            Assert.AreEqual(expectedMessage, actualMessage);
+        }
+
+        [Test]
+        public void ProduceSupplementShouldAddSupplementToCollection()
+        {
+            Supplement expectedSupplement = new Supplement("Terminator", 2045);
+            
+            string expectedMessage =
+                $"Supplement: {expectedSupplement.Name} IS: {expectedSupplement.InterfaceStandard}";
+
+            string actualMessage = 
+                factory.ProduceSupplement(expectedSupplement.Name, expectedSupplement.InterfaceStandard);
+            
+            Supplement actualSupplement = factory.Supplements.Single();
+
+            Assert.AreEqual(expectedSupplement.Name, actualSupplement.Name);
+            Assert.AreEqual(expectedSupplement.InterfaceStandard, actualSupplement.InterfaceStandard);
             Assert.AreEqual(expectedMessage, actualMessage);
         }
     }
