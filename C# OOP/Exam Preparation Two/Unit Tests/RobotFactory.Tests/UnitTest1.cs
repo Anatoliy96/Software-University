@@ -126,6 +126,7 @@ namespace RobotFactory.Tests
             Assert.AreEqual(1, expectedRobot.Supplements.Count);
         }
 
+        [Test]
         public void UpgradeRobotShouldReturnFalseWhenInterfaceStandarsAreDiffrent()
         {
             Robot expectedRobot = new Robot("Terminator", 1000, 2045);
@@ -135,6 +136,46 @@ namespace RobotFactory.Tests
 
             Assert.IsFalse(actualResult);
             Assert.AreEqual(0, expectedRobot.Supplements.Count);
+        }
+
+        [Test]
+        public void SellRobotShouldReturnCorrectRobot()
+        {
+            Robot expectedRobot = new Robot("Terminator", 100, 20045);
+
+            _ = factory.ProduceRobot(expectedRobot.Model, expectedRobot.Price, expectedRobot.InterfaceStandard);
+            _ = factory.ProduceRobot(expectedRobot.Model, 80, 25);
+            _ = factory.ProduceRobot(expectedRobot.Model, 70, 26);
+
+            Robot actualRobot = factory.SellRobot(100);
+
+            Assert.AreEqual(expectedRobot.Price, actualRobot.Price);
+
+            Assert.AreEqual(expectedRobot.Model, actualRobot.Model);
+            Assert.AreEqual(expectedRobot.Price, actualRobot.Price);
+            Assert.AreEqual(expectedRobot.InterfaceStandard, actualRobot.InterfaceStandard);
+        }
+
+        [Test]
+        public void SellRobotShouldReturnNullIfPriceIsTooLow()
+        {
+            Robot expectedRobot = new Robot("Terminator", 100, 20045);
+
+            _ = factory.ProduceRobot(expectedRobot.Model, expectedRobot.Price, expectedRobot.InterfaceStandard);
+            _ = factory.ProduceRobot(expectedRobot.Model, 80, 25);
+            _ = factory.ProduceRobot(expectedRobot.Model, 70, 26);
+
+            Robot actualRobot = factory.SellRobot(20);
+
+            Assert.Null(actualRobot);
+        }
+
+        [Test]
+        public void SellRobotShouldReturnNullIfCollectionIsEmpty()
+        {
+            Robot actualRobot = factory.SellRobot(20);
+
+            Assert.Null(actualRobot);
         }
     }
 }
