@@ -8,7 +8,7 @@ namespace RobotFactory.Tests
     public class Tests
     {
         private Factory factory;
-        
+
         [SetUp]
         public void Setup()
         {
@@ -24,7 +24,7 @@ namespace RobotFactory.Tests
             Assert.AreEqual(expectedName, factory.Name);
             Assert.AreEqual(expectedCapacity, factory.Capacity);
             Assert.IsNotNull(factory.Robots);
-            Assert.IsNotNull (factory.Robots);
+            Assert.IsNotNull(factory.Robots);
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace RobotFactory.Tests
             factory.Name = expectedName;
 
             Assert.AreEqual(expectedName, factory.Name);
-           
+
         }
 
         [Test]
@@ -48,13 +48,13 @@ namespace RobotFactory.Tests
         }
 
         [Test]
-        public void ProduceRobotShouldWorkProperly()
+        public void ProduceRobotShouldAddRobotToCollection()
         {
             Robot expectedRobot = new Robot("Terminator", 1000, 2045);
             string expectedMessage =
                 $"Produced --> Robot model: {expectedRobot.Model} IS: {expectedRobot.InterfaceStandard}, Price: {expectedRobot.Price:f2}";
 
-            string actualMessage = 
+            string actualMessage =
                 factory.ProduceRobot(expectedRobot.Model, expectedRobot.Price, expectedRobot.InterfaceStandard);
 
             Robot actualRobot = factory.Robots.Single();
@@ -62,6 +62,19 @@ namespace RobotFactory.Tests
             Assert.AreEqual(expectedRobot.Model, actualRobot.Model);
             Assert.AreEqual(expectedRobot.Price, actualRobot.Price);
             Assert.AreEqual(expectedRobot.InterfaceStandard, actualRobot.InterfaceStandard);
+            Assert.AreEqual(expectedMessage, actualMessage);
+        }
+        [Test]
+        public void ProduceRobotShouldNotAddRobotToCollectionWhenCapacityLimitIsReached()
+        {
+            Factory factory = new Factory("Terminators", 1);
+            Robot robot2 = new Robot("Stoqn", 34566, 1223);
+
+            string expectedMessage = "The factory is unable to produce more robots for this production day!";
+
+            factory.ProduceRobot("Ivan", 13254, 2044);
+            string actualMessage = factory.ProduceRobot("Stoqn", 34566, 1223);
+
             Assert.AreEqual(expectedMessage, actualMessage);
         }
     }
