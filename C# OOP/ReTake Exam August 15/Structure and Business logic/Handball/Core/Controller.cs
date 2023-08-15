@@ -3,6 +3,7 @@ using Handball.Models;
 using Handball.Models.Contracts;
 using Handball.Repositories;
 using Handball.Repositories.Contracts;
+using Handball.Utilities.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,99 +26,107 @@ namespace Handball.Core
         public string LeagueStandings()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("***League Standings***");
 
-            var sortedTeams = teams.Models.OrderByDescending(t => t.PointsEarned).ThenByDescending(t => t.OverallRating).ThenBy(t => t.Name);
+            sb.AppendLine($"***League Standings***");
 
-            foreach (ITeam team in sortedTeams)
+            foreach (var team in this.teams.Models.OrderByDescending(t => t.PointsEarned).ThenByDescending(t => t.OverallRating).ThenBy(t => t.Name))
             {
                 sb.AppendLine(team.ToString());
             }
-
 
             return sb.ToString().TrimEnd();
         }
 
         public string NewContract(string playerName, string teamName)
         {
-            var player = players.GetModel(playerName);
-
-            if (player == null)
+            if (!this.players.ExistsModel(playerName))
             {
-                return $"Player with the name {playerName} does not exist in the {nameof(PlayerRepository)}.";
+                return string.Format(OutputMessages.PlayerNotExisting, playerName, nameof(PlayerRepository));
             }
 
-            var team = teams.GetModel(teamName);
-
-            if (team.Name == null)
+            if (!this.teams.ExistsModel(teamName))
             {
-                return $"Team with the name {teamName} does not exist in the {nameof(PlayerRepository)}.";
+                return string.Format(OutputMessages.TeamNotExisting, teamName, nameof(TeamRepository));
             }
 
-            if (player.Team != null)
+            IPlayer player = players.GetModel(playerName);
+            ITeam team = teams.GetModel(teamName);
+
+            if (player.Team != default)
             {
-                return $"Player {playerName} has already signed with {player.Team}.";
+                return string.Format(OutputMessages.PlayerAlreadySignedContract, playerName, player.Team);
             }
 
             player.JoinTeam(teamName);
-            players.AddModel(player);
+            team.SignContract(player);
 
             return $"Player {playerName} signed a contract with {teamName}.";
         }
 
         public string NewGame(string firstTeamName, string secondTeamName)
         {
-            var team1 = teams.GetModel(firstTeamName);
-            var team2 = teams.GetModel(secondTeamName);
+            ITeam firstTeam = this.teams.GetModel(firstTeamName);
+            ITeam secondTeam = this.teams.GetModel(secondTeamName);
 
-            if (team1.OverallRating > team2.OverallRating)
+            if (firstTeam.OverallRating != secondTeam.OverallRating)
             {
-                team1.Win();
-                team2.Lose();
+                ITeam winner;
+                ITeam loser;
+                if (firstTeam.OverallRating > secondTeam.OverallRating)
+                {
+                    winner = firstTeam;
+                    loser = secondTeam;
+                }
+                else
+                {
+                    winner = secondTeam;
+                    loser = firstTeam;
+                }
 
-                return $"Team {team1} wins the game over {team2}!";
+                winner.Win();
+                loser.Lose();
+
+                return string.Format(OutputMessages.GameHasWinner, winner.Name, loser.Name);
             }
-            else if (team2.OverallRating > team1.OverallRating)
+            else
             {
-                team2.Win();
-                team1.Lose();
+                firstTeam.Draw();
+                secondTeam.Draw();
 
-                return $"Team {team2} wins the game over {team1}!";
+                return string.Format(OutputMessages.GameIsDraw, firstTeamName, secondTeamName);
             }
-            team1.Draw();
-            team2.Draw();
-
-            return $"The game between {firstTeamName} and {secondTeamName} ends in a draw!";
 
         }
 
         public string NewPlayer(string typeName, string name)
         {
-            if (typeName != nameof(CenterBack) && typeName != nameof(ForwardWing) && typeName != nameof(Goalkeeper))
+            if (typeName != nameof(Goalkeeper) && typeName != nameof(CenterBack) && typeName != nameof(ForwardWing))
             {
-                return $"{typeName} is invalid position for the application.";
+                return string.Format(OutputMessages.InvalidTypeOfPosition, typeName);
             }
 
             if (players.ExistsModel(name))
             {
-                Type type = typeof(Player);
-                return $"{name} is already added to the {players.GetType().Name} as {(nameof(Player))}.";
+                string position = this.players.GetModel(name).GetType().Name;
+                return string.Format(OutputMessages.PlayerIsAlreadyAdded, name, nameof(PlayerRepository), position);
             }
 
-            if (typeName == nameof(CenterBack))
+            IPlayer player;
+            if (typeName == nameof(Goalkeeper))
             {
-                players.AddModel(new CenterBack(name));
+                player = new Goalkeeper(name);
             }
-            else if (typeName == nameof(ForwardWing))
+            else if (typeName == nameof(CenterBack))
             {
-                players.AddModel(new ForwardWing(name));
+                player = new CenterBack(name);
             }
-            else if (typeName == nameof(Goalkeeper))
+            else
             {
-                players.AddModel(new Goalkeeper(name));
+                player = new ForwardWing(name);
             }
 
-            return $"{name} is filed for the handball league.";
+            players.AddModel(player);
+            return string.Format(OutputMessages.PlayerAddedSuccessfully, name);
         }
 
         public string NewTeam(string name)
