@@ -4,35 +4,41 @@
     {
         public static void Main()
         {
-            string[] doughtInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-
-            while (doughtInput[0] != "END") 
+            try
             {
-                try
+                string[] pizaaInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                string[] doughtInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                string[] toppingInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+                string type = doughtInput[0];
+                string flourType = doughtInput[1];
+                string bakingTechnique = doughtInput[2];
+                double calories = double.Parse(doughtInput[3]);
+
+                string pizzaType = pizaaInput[0];
+                string pizzaName = pizaaInput[1];
+
+                Dough dough = new Dough(flourType, bakingTechnique, calories);
+                Pizza pizza = new Pizza(pizzaName, dough);
+
+                while (toppingInput[0] != "END")
                 {
-                    string[] toppingInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-
-                    string type = doughtInput[0];
-                    string flourType = doughtInput[1];
-                    string bakingTechnique = doughtInput[2];
-                    double calories = double.Parse(doughtInput[3]);
-
                     string toppingType = toppingInput[0];
                     string toppingTypeModifier = toppingInput[1];
                     double toppingCalories = double.Parse(toppingInput[2]);
 
-                    Dough dough = new Dough(flourType, bakingTechnique, calories);
                     Topping topping = new Topping(toppingTypeModifier, toppingCalories);
 
-                    Console.WriteLine($"{dough.CaloriesPerGram:f2}");
-                    Console.WriteLine($"{topping.CaloriesPerGram:f2}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                    pizza.Add(topping);
+
+                    toppingInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
                 }
 
-                doughtInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                Console.WriteLine(pizza);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }

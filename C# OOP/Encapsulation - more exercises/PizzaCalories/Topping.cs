@@ -47,7 +47,7 @@ namespace PizzaCalories
         {
             get
             {
-                double typeOfToppingModifier = typeOfToppingCalories[toppingType];
+                double typeOfToppingModifier = typeOfToppingCalories[toppingType.ToLower()];
 
                 return typeOfToppingModifier * weight * baseCaloriesPerGram;
             }
@@ -60,7 +60,7 @@ namespace PizzaCalories
             {
                 if (value < 1 || value > 50)
                 {
-                    throw new ArgumentException($"{value} weight should be in the range [1..50].");
+                    throw new ArgumentException($"{ToppingType} weight should be in the range [1..50].");
                 }
                 weight = value;
             }
