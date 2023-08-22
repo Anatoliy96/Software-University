@@ -113,7 +113,7 @@ namespace FootballTeamGenerator
         {
             get
             {
-                double average = (Endurance + Sprint + Dribble + Passing + Shooting) / 5;
+                double average = (Endurance + Sprint + Dribble + Passing + Shooting) / 5.0;
                 return average;
             }
         }

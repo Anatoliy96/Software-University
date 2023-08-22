@@ -33,7 +33,12 @@ namespace FootballTeamGenerator
         {
             get
             {
-                return Math.Round(players.Average(p => p.OverallSkill));
+                if (players.Any())
+                {
+                    return (int)Math.Round(players.Average(p => p.OverallSkill));
+                }
+
+                return 0;
             }
         }
 
@@ -44,10 +49,16 @@ namespace FootballTeamGenerator
             players.Add(player);
         }
 
-        public void RemovePlayer(Player player)
+        public void RemovePlayer(string playerName)
         {
+            Player player = players.FirstOrDefault(p => p.Name == playerName);
+
+            if (player == null)
+            {
+                throw new ArgumentException($"Player {playerName} is not in {Name} team.");
+            }
+
             players.Remove(player);
         }
-
     }
 }

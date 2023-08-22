@@ -4,70 +4,97 @@
     {
         public static void Main()
         {
-            try
+            List<Team> teams = new();
+
+            string input;
+
+            while ((input = Console.ReadLine()) != "END")
             {
-                List<Team> teams = new List<Team>();
+                string[] tokens = input.Split(";");
 
-                string[] command = Console.ReadLine().Split(";", StringSplitOptions.RemoveEmptyEntries);
+                string command = tokens[0];
 
-                Team team = new Team(command[0]);
-
-                teams.Add(team);
-
-                while (command[0] != "END")
+                try
                 {
-                    string[] commands = Console.ReadLine().Split(";", StringSplitOptions.RemoveEmptyEntries);
-
-                    Player player = new Player
-                        (
-                        commands[2],
-                        int.Parse(commands[3]),
-                        int.Parse(commands[4]),
-                        int.Parse(commands[5]),
-                        int.Parse(commands[6]),
-                        int.Parse(commands[7])
-                        );
-
-                    if (commands[0] == "Add")
+                    switch (command)
                     {
-                        if (teams.Contains(team))
-                        {
-                            team.AddPlayer(player);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Team {team.Name} does not exist.");
-                        }
+                        case "Team":
+                            AddTeam(tokens[1], teams);
+                            break;
+                        case "Add":
+                            AddPlayer(
+                                tokens[1],
+                                tokens[2],
+                                int.Parse(tokens[3]),
+                                int.Parse(tokens[4]),
+                                int.Parse(tokens[5]),
+                                int.Parse(tokens[6]),
+                                int.Parse(tokens[7]),
+                                teams);
+                            break;
+                        case "Remove":
+                            RemovePlayer(tokens[1], tokens[2], teams);
+                            break;
+                        case "Rating":
+                            PrintRating(tokens[1], teams);
+                            break;
                     }
-                    else if (commands[0] == "Remove")
-                    {
-                        var playerToRemove = team.Players.FirstOrDefault(t => t.Name == commands[2]);
 
-                        if (playerToRemove != null)
-                        {
-                            team.RemovePlayer(playerToRemove);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Player {player.Name} is not in {team.Name} team.");
-                        }
-                    }
-                    else if (commands[0] == "Rating")
-                    {
-                        if (teams.Contains(team))
-                        {
-                            Console.WriteLine(team.Rating);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Team {team.Name} does not exist.");
-                        }
-                    }
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
-            catch (Exception ex)
+
+            static void AddTeam(string name, List<Team> teams)
             {
-                Console.WriteLine(ex.Message);
+                teams.Add(new Team(name));
+            }
+
+            static void AddPlayer(
+                string teamName,
+                string name,
+                int endurance,
+                int sprint,
+                int dribble,
+                int passing,
+                int shooting,
+                List<Team> teams)
+            {
+                Team team = teams.FirstOrDefault(t => t.Name == teamName);
+
+                if (team == null)
+                {
+                    throw new ArgumentException($"Team {teamName} does not exist.");
+                }
+
+                Player player = new(name, endurance, sprint, dribble, passing, shooting);
+                team.AddPlayer(player);
+            }
+
+            static void RemovePlayer(string teamName, string playerName, List<Team> teams)
+            {
+                Team team = teams.FirstOrDefault(t => t.Name == teamName);
+
+                if (team == null)
+                {
+                    throw new ArgumentException($"Team {teamName} does not exist.");
+                }
+
+                team.RemovePlayer(playerName);
+            }
+
+            static void PrintRating(string teamName, List<Team> teams)
+            {
+                Team team = teams.FirstOrDefault(t => t.Name == teamName);
+
+                if (team == null)
+                {
+                    throw new ArgumentException($"Team {teamName} does not exist.");
+                }
+
+                Console.WriteLine($"{teamName} - {team.Rating:f0}");
             }
         }
     }
