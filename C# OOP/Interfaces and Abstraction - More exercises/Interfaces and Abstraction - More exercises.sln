@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars", "Cars\Cars.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonInfo", "PersonInfo\PersonInfo.csproj", "{09A5DB1F-098E-4B09-96D2-1FEBAE898CDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telephony", "Telephony\Telephony.csproj", "{58D1CDD1-C252-4969-B144-BBA59119C900}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{09A5DB1F-098E-4B09-96D2-1FEBAE898CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09A5DB1F-098E-4B09-96D2-1FEBAE898CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09A5DB1F-098E-4B09-96D2-1FEBAE898CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D1CDD1-C252-4969-B144-BBA59119C900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D1CDD1-C252-4969-B144-BBA59119C900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D1CDD1-C252-4969-B144-BBA59119C900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D1CDD1-C252-4969-B144-BBA59119C900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
