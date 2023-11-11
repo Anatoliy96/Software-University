@@ -6,27 +6,39 @@ using System.Threading.Tasks;
 
 namespace Vehicles.Models
 {
-    public class Truck : Vehicle
+    public class Bus : Vehicle
     {
-        private double baseFuelConsumptionPerKilometer = 1.6;
+        private double baseConsumptionWithPeople = 1.4;
+        private bool isAirConditionerOn;
 
-        public Truck(double fuelQuantity, double fuelConsumption, int tankCapacity) 
+        public Bus(double fuelQuantity, double fuelConsumption, int tankCapacity) 
             : base(fuelQuantity, fuelConsumption, tankCapacity)
         {
+            isAirConditionerOn = false;
+        }
+
+        public void SetAirConditioner(bool isOn)
+        {
+            isAirConditionerOn = isOn;
         }
 
         public override void Drive(double distance)
         {
-            double fuel = (FuelConsumption + baseFuelConsumptionPerKilometer) * distance;
+            double fuel = FuelConsumption * distance;
+
+            if (isAirConditionerOn)
+            {
+                fuel += baseConsumptionWithPeople * distance;
+            }
 
             if (fuel <= FuelQuantity)
             {
                 FuelQuantity -= fuel;
-                Console.WriteLine($"Truck travelled {distance} km");
+                Console.WriteLine($"Bus travelled {distance} km");
             }
             else
             {
-                Console.WriteLine("Truck needs refueling");
+                Console.WriteLine("Bus needs refueling");
             }
         }
 
@@ -38,12 +50,12 @@ namespace Vehicles.Models
                 return;
             }
 
-            FuelQuantity += liters * 0.95;
+            FuelQuantity += liters;
 
             if (TankCapacity < FuelQuantity)
             {
                 Console.WriteLine($"Cannot fit {liters} fuel in the tank");
-                FuelQuantity -= liters * 0.95;
+                FuelQuantity -= liters;
             }
         }
     }

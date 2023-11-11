@@ -10,8 +10,8 @@ namespace Vehicles.Models
     {
         private double baseFuelConsumptionPerKilometer = 0.9;
 
-        public Car(double fuelQuantity, double fuelConsumption) 
-            : base(fuelQuantity, fuelConsumption)
+        public Car(double fuelQuantity, double fuelConsumption, int tankCapacity) 
+            : base(fuelQuantity, fuelConsumption, tankCapacity)
         {
         }
 
@@ -32,7 +32,19 @@ namespace Vehicles.Models
 
         public override void Refuel(double liters)
         {
+            if (liters <= 0)
+            {
+                Console.WriteLine("Fuel must be a positive number");
+                return;
+            }
+
             FuelQuantity += liters;
+
+            if (TankCapacity < FuelQuantity)
+            {
+                Console.WriteLine($"Cannot fit {liters} fuel in the tank");
+                FuelQuantity -= liters;
+            }
         }
     }
 }
