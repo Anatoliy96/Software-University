@@ -3,42 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WildFarm.Models.Animals;
 using WildFarm.Models.Interfaces;
 
-namespace WildFarm.Models.Animals
+namespace WildFarm.Core.Interfaces
 {
-    public abstract class Animal : IAnimal
+    public class AnimalFactory : IAnimalFactory
     {
-        protected Animal(string name, double weight)
-        {
-            Name = name;
-            Weight = weight;
-        }
-
-        public string Name { get; private set; }
-
-        public double Weight { get; private set; }
-
-        public int FoodEaten { get; private set; }
-
-        protected abstract double WeightMultiplier { get; }
-
-        protected abstract IReadOnlyCollection<Type> PreferredFoodTypes { get; }
-
-        public abstract string ProduceSound();
-
-        public void Eat(IFood food)
-        {
-            if (!PreferredFoodTypes.Any(pf => food.GetType().Name == pf.Name))
-            {
-                throw new ArgumentException($"{this.GetType().Name} does not eat {food.GetType().Name}!");
-            }
-
-            Weight += food.Quantity * WeightMultiplier;
-
-            FoodEaten += food.Quantity;
-        }
-
         public IAnimal CreateAnimal(string[] animalArgs)
         {
             string type = animalArgs[0];
@@ -63,9 +34,5 @@ namespace WildFarm.Models.Animals
                     throw new ArgumentException("Invalid animal type!");
             }
         }
-
-        public override string ToString()
-            => $"{GetType().Name} [{Name}, ";
-
     }
 }

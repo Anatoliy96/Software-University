@@ -11,8 +11,8 @@ namespace WildFarm.Models.Animals
     {
         private double tigerWeightMultiplier = 1.00;
 
-        public Tiger(string name, double weight, string breed) 
-            : base(name, weight, breed)
+        public Tiger(string name, double weight, string livingRegion, string breed) 
+            : base(name, weight, livingRegion, breed)
         {
         }
 

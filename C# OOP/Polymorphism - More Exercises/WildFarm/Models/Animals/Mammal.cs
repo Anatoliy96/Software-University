@@ -16,5 +16,6 @@ namespace WildFarm.Models.Animals
         }
 
         public string LivingRegion { get; private set; }
+
     }
 }
