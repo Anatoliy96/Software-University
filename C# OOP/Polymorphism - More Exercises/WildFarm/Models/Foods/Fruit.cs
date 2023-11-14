@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WildFarm.Models.Foods
 {
-    internal class Fruit
+    public class Fruit : Food
     {
+        public Fruit(int quantity) 
+            : base(quantity)
+        {
+        }
     }
 }

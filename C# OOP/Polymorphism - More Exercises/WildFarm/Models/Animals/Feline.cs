@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WildFarm.Models.Interfaces;
 
 namespace WildFarm.Models.Animals
 {
-    internal class Feline
+    public abstract class Feline : Animal, IFeline
     {
+        protected Feline(string name, double weight, string breed) 
+            : base(name, weight)
+        {
+            Breed = breed;
+        }
+
+        public string Breed { get; private set; }
     }
 }

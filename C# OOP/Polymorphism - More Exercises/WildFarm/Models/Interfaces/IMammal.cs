@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WildFarm.Interfaces
+namespace WildFarm.Models.Interfaces
 {
-    internal interface IMammal
+    public interface IMammal
     {
+        public string LivingRegion { get; }
     }
 }

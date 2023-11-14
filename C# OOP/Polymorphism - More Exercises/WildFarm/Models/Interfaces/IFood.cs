@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WildFarm.Interfaces
+namespace WildFarm.Models.Interfaces
 {
-    internal class IFood
+    public interface IFood
     {
+        public int Quantity { get; }
     }
 }
