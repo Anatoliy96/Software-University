@@ -4,6 +4,9 @@
     {
         static void Main()
         {
+            DetailsPrinter printer = new DetailsPrinter();
+
+            printer.PrintDetails();
         }
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace P03.DetailPrinter
+﻿using System;
+using P03.Detail_Printer.Interfaces;
+
+namespace P03.DetailPrinter
 {
-    public class Employee
+    public class Employee : INameble
     {
         public Employee(string name)
         {
@@ -8,5 +11,10 @@
         }
 
         public string Name { get; set; }
+
+        public void Print()
+        {
+            Console.WriteLine(Name);
+        }
     }
 }
