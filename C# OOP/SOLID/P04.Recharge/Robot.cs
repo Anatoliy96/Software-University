@@ -7,7 +7,7 @@ namespace P04.Recharge
         private int capacity;
         private int currentPower;
 
-        public Robot(string id, int capacity) : base(id)
+        public Robot(string id, int capacity, int workingHours) : base(id, workingHours)
         {
             this.capacity = capacity;
         }
@@ -33,15 +33,9 @@ namespace P04.Recharge
             base.Work(hours);
             this.currentPower -= hours;
         }
-
-        public override void Recharge()
+        public void Recharge()
         {
             this.currentPower = this.capacity;
-        }
-
-        public override void Sleep()
-        {
-            throw new InvalidOperationException("Robots cannot sleep");
         }
     }
 }
