@@ -1,22 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace P02.Graphic_Editor
 {
     public class GraphicEditor
     {
-        public void DrawShape(IShape shape)
+        private List<IShape> shapes;
+
+        public GraphicEditor()
         {
-            if (shape is Circle)
+            shapes = new List<IShape>()
             {
-                Console.WriteLine("I'm Circle");
-            }
-            else if (shape is Rectangle)
+                new Circle(),
+                new Rectangle(),
+                new Square(),
+                new Triangle()
+            };
+        }
+
+        public void DrawShape()
+        {
+            foreach (var shape in shapes)
             {
-                Console.WriteLine("I'm Recangle");
-            }
-            else if (shape is Square)
-            {
-                Console.WriteLine("I'm Square");
+                shape.Draw();
             }
         }
     }
