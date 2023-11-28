@@ -10,7 +10,7 @@ namespace UniversityCompetition.Repositories.Contracts
 {
     public class SubjectRepository : IRepository<ISubject>
     {
-        private List<ISubject> subjects = new List<ISubject>();
+        private List<ISubject> subjects;
 
         public SubjectRepository()
         {
@@ -21,7 +21,22 @@ namespace UniversityCompetition.Repositories.Contracts
 
         public void AddModel(ISubject model)
         {
-            subjects.Add(model);
+            ISubject subject = null;
+
+            if (model is TechnicalSubject)
+            {
+                subject = new TechnicalSubject(Models.Count + 1, model.Name);
+            }
+            else if (model is HumanitySubject)
+            {
+                subject = new HumanitySubject(Models.Count + 1, model.Name);
+            }
+            else if (model is EconomicalSubject)
+            {
+                subject = new EconomicalSubject(Models.Count + 1, model.Name);
+            }
+
+            subjects.Add(subject);
         }
 
         public ISubject FindById(int id)

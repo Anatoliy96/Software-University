@@ -14,6 +14,7 @@ namespace UniversityCompetition.Models
         private string category;
         private int capacity;
         private List<int> requiredSubjects;
+        private string[] allowedCategories = new string[] { "Technical", "Humanity", "Economical" };
 
         public University(int id, string name, string category, int capacity, ICollection<int> requiredSubjects)
         {
@@ -46,10 +47,11 @@ namespace UniversityCompetition.Models
             
             private set
             {
-                if (value != nameof(TechnicalSubject) && value != nameof(HumanitySubject) && value != nameof(EconomicalSubject))
+                if (!allowedCategories.Contains(value))
                 {
                     throw new ArgumentException($"University category {value} is not allowed in the application!");
                 }
+
                 category = value;
             }
         }
