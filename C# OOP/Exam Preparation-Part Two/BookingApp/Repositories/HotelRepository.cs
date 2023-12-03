@@ -29,7 +29,7 @@ namespace BookingApp.Repositories
 
         public IHotel Select(string criteria)
         {
-            return hotels.FirstOrDefault(h => h.GetType().Name == criteria);
+            return hotels.FirstOrDefault(h => h.FullName == criteria);
         }
     }
 }
