@@ -102,7 +102,7 @@ namespace RobotService.Core
                 }
 
                 totalPowerNeeded -= robot.BatteryLevel;
-                robot.ExecuteService(robot.BatteryLevel);
+                robot.ExecuteService(totalPowerNeeded);
             }
 
             return $"{serviceName} is performed successfully with {robotsCounter} robots.";
