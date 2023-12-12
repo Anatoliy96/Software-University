@@ -64,24 +64,24 @@ namespace EDriveRent.Core
             IVehicle vehicle = vehicles.FindById(licensePlateNumber);
             IRoute route = routes.FindById(routeId);
 
-            if (user.IsBlocked == true)
+            if (user.IsBlocked)
             {
                 return $"User {drivingLicenseNumber} is blocked in the platform! Trip is not allowed.";
             }
 
-            if (vehicle.IsDamaged == true)
+            if (vehicle.IsDamaged)
             {
                 return $"Vehicle {licensePlateNumber} is damaged! Trip is not allowed.";
             }
 
-            if (route.IsLocked == true)
+            if (route.IsLocked)
             {
                 return $"Route {routeId} is locked! Trip is not allowed.";
             }
 
             vehicle.Drive(route.Length);
 
-            if (isAccidentHappened == true)
+            if (isAccidentHappened)
             {
                 vehicle.ChangeStatus();
                 user.DecreaseRating();
@@ -91,7 +91,7 @@ namespace EDriveRent.Core
                 user.IncreaseRating();
             }
 
-            return vehicle.ToString();
+            return vehicle.ToString().TrimEnd();
         }
 
         public string RegisterUser(string firstName, string lastName, string drivingLicenseNumber)
@@ -112,8 +112,6 @@ namespace EDriveRent.Core
 
         public string RepairVehicles(int count)
         {
-            int repairsCount = 0;
-
             var damagedVehicles = vehicles.GetAll()
                 .Where(v => v.IsDamaged == true)
                 .OrderBy(v => v.Brand)
@@ -125,11 +123,9 @@ namespace EDriveRent.Core
             {
                 vehicle.ChangeStatus();
                 vehicle.Recharge();
-
-                repairsCount++;
             }
 
-            return $"{repairsCount} vehicles are successfully repaired!";
+            return $"{damagedVehicles.Count} vehicles are successfully repaired!";
         }
 
         public string UploadVehicle(string vehicleType, string brand, string model, string licensePlateNumber)
