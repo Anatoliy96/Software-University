@@ -17,7 +17,7 @@ namespace NauticalCatchChallenge.Models
 
         public override void Miss(int TimeToCatch)
         {
-            int usedOxyLvl = (int)Math.Round(oxygenLevel * 0.3);
+            int usedOxyLvl = (int)Math.Round(TimeToCatch * 0.3);
             base.OxygenLevel -= usedOxyLvl;
         }
 

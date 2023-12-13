@@ -42,7 +42,7 @@ namespace NauticalCatchChallenge.Models
             {
                 if (value < 0)
                 {
-                    value = 0;
+                    oxygenLevel = 0;
                 }
                 else
                 {
