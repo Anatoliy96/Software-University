@@ -11,7 +11,7 @@ namespace Handball.Models
     {
         private List<IPlayer> players;
         private string name;
-        
+
         public Team(string name)
         {
             Name = name;
@@ -21,7 +21,7 @@ namespace Handball.Models
 
         public string Name
         {
-            get => name; 
+            get => name;
             private set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -47,7 +47,7 @@ namespace Handball.Models
                     return Math.Round(players.Average(p => p.Rating), 2);
                 }
             }
-            
+
         }
 
         public IReadOnlyCollection<IPlayer> Players => players.AsReadOnly();
@@ -90,18 +90,19 @@ namespace Handball.Models
 
             sb.AppendLine($"Team: {Name} Points: {PointsEarned}");
             sb.AppendLine($"--Overall rating: {OverallRating}");
+            sb.Append("--Players: ");
 
-            foreach (var player in players)
+
+            if (players.Any())
             {
-                if (players.Any())
-                {
-                    sb.AppendLine(players.ToString());
-                }
-                else
-                {
-                    sb.AppendLine("none");
-                }
+                var names = this.Players.Select(p => p.Name);
+                sb.Append(string.Join(", ", names));
             }
+            else
+            {
+                sb.AppendLine("none");
+            }
+
 
             return sb.ToString().TrimEnd();
         }
