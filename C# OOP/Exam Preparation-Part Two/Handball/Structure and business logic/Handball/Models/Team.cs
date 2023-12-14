@@ -83,5 +83,27 @@ namespace Handball.Models
                 player.IncreaseRating();
             }
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Team: {Name} Points: {PointsEarned}");
+            sb.AppendLine($"--Overall rating: {OverallRating}");
+
+            foreach (var player in players)
+            {
+                if (players.Any())
+                {
+                    sb.AppendLine(players.ToString());
+                }
+                else
+                {
+                    sb.AppendLine("none");
+                }
+            }
+
+            return sb.ToString().TrimEnd();
+        }
     }
 }
