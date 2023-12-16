@@ -42,7 +42,7 @@ namespace BankLoan.Models
 
         public void AddClient(IClient Client)
         {
-            if (this.Capacity > clients.Count)
+            if (this.Capacity < clients.Count)
             {
                 throw new ArgumentException("Not enough capacity for this client.");
             }
@@ -59,16 +59,16 @@ namespace BankLoan.Models
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Name: {this.Name}, Type: {typeof(Bank).Name}");
+            sb.AppendLine($"Name: {this.Name}, Type: {this.GetType().Name}");
 
             if (clients.Any())
             {
                 var client = clients.Select(c => c.Name);
-                sb.AppendLine($"{string.Join(", ", client)}");
+                sb.AppendLine($"Clients: {string.Join(", ", client)}");
             }
             else
             {
-                sb.AppendLine("none");
+                sb.AppendLine("Clients: none");
             }
 
             sb.AppendLine($"Loans: {loans.Count}, Sum of Rates: {this.SumRates()}");

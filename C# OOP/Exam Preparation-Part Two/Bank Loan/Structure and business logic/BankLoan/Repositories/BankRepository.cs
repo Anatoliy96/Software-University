@@ -26,7 +26,7 @@ namespace BankLoan.Repositories
 
         public IBank FirstModel(string name)
         {
-            return banks.FirstOrDefault(b => b.GetType().Name == name);
+            return banks.FirstOrDefault(b => b.Name == name);
         }
 
         public bool RemoveModel(IBank model)
