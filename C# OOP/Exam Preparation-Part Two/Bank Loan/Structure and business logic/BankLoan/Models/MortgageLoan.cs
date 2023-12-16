@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace BankLoan.Models
 {
-    internal class MortgageLoan
+    public class MortgageLoan : Loan
     {
+        private const int InterestRate = 3;
+        private const double Amount = 50000;
+
+        public MortgageLoan() 
+            : base(InterestRate, Amount)
+        {
+        }
     }
 }
