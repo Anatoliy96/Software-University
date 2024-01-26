@@ -1,0 +1,17 @@
+h1{
+    text-size-adjust: 28px;
+}
+.paragraph{
+    font-style: italic;
+}
+body{
+    Margin: 0px;
+    Padding: 0px;
+    Background-color: #CCCCCC;
+}
+section{
+    margin-left: 20px;
+}
+p{
+    text-size-adjust: 24px;
+}
